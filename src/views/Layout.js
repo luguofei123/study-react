@@ -21,6 +21,7 @@ import LifeCycle from './RactApi/lifeCycle/LifeCycle'
 // react-hook
 import UseState from './RactApi/react-hook/UseState'
 import UseEffect from './RactApi/react-hook/UseEffect'
+import UseMemo from './RactApi/react-hook/UseMemo'
 
 
 import {
@@ -69,7 +70,7 @@ const items = [
                 key: 'react-hook', label: 'react-hook', icon: '', children: [
                     { key: 'useState', label: 'useState', icon: '' },
                     { key: 'useEffect', label: 'useEffect', icon: '' },
-                    { key: 'CreatContent1', label: 'CreatContent', icon: '' },
+                    { key: 'useMemo', label: 'useMemo', icon: '' },
                     { key: 'Children1', label: 'Children', icon: '' },
                     { key: 'createRef1', label: 'createRef', icon: '' },
                     { key: 'createFactory1', label: 'createFactory', icon: '' },
@@ -201,6 +202,8 @@ const App = () => {
                             {/* react-hook */}
                             <Route exact path='/useState' element={<UseState />}></Route>
                             <Route exact path='/useEffect' element={<UseEffect />}></Route>
+                            <Route exact path='/useMemo' element={<UseMemo />}></Route>
+
 
 
 
