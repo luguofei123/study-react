@@ -18,6 +18,9 @@ import CreateRef from './RactApi/react-tool/CreateRef'
 import IsValidElement from './RactApi/react-tool/IsValidElement'
 // 生命周期
 import LifeCycle from './RactApi/lifeCycle/LifeCycle'
+// react-hook
+import UseState from './RactApi/react-hook/UseState'
+import UseEffect from './RactApi/react-hook/UseEffect'
 
 
 import {
@@ -64,8 +67,8 @@ const items = [
             },
             {
                 key: 'react-hook', label: 'react-hook', icon: '', children: [
-                    { key: 'CreatElement1', label: 'CreatElement', icon: '' },
-                    { key: 'CloneElement1', label: 'CloneElement', icon: '' },
+                    { key: 'useState', label: 'useState', icon: '' },
+                    { key: 'useEffect', label: 'useEffect', icon: '' },
                     { key: 'CreatContent1', label: 'CreatContent', icon: '' },
                     { key: 'Children1', label: 'Children', icon: '' },
                     { key: 'createRef1', label: 'createRef', icon: '' },
@@ -195,6 +198,10 @@ const App = () => {
                             <Route exact path='/isValidElement' element={<IsValidElement />}></Route>
                             {/* 生命周期 */}
                             <Route exact path='/lifeCycle1' element={<LifeCycle />}></Route>
+                            {/* react-hook */}
+                            <Route exact path='/useState' element={<UseState />}></Route>
+                            <Route exact path='/useEffect' element={<UseEffect />}></Route>
+
 
 
                         </Routes>
