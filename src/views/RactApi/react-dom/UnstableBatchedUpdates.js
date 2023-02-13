@@ -38,6 +38,10 @@ class UnstableBatchedUpdates extends React.Component {
     subNumber () {
         this.setState((state, props) => ({ number: state.number - 1 }))
     }
+    // 类组件有个实现上的怪异，它可以同步读取事件内部的状态更新。这意味着可以在setState之间读取到最新的state
+    // 在 React 18，情况不再如此。由于即使在setTimeout中的所有更新都是批处理的，
+    // 因此React不会同步渲染第一个setState的结果——渲染发生在browser nextTick，
+    // 所以在setState之间读取state将获取不到上一个setState的结果：
     // 三次打印结果全部是0
     test1 () {
         this.setState({ number: this.state.number + 1 })
@@ -57,7 +61,7 @@ class UnstableBatchedUpdates extends React.Component {
             console.log(this.state.number)
             this.setState({ number: this.state.number + 1 })
             console.log(this.state.number)
-        }, 1000)
+        }, 100)
     }
     test3 () {
         setTimeout(() => {

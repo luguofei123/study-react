@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useId } from "react";
 
 
 // 函数组件一般写法
@@ -11,6 +11,7 @@ function Child (pros) {
     // useState有点类似于PureComponent,会进行一个比较浅的比较，如果是对象的时候直接传入并不会更新，这点一定要切记
     let [number, setNumber] = useState(1)
     let [countData, setcountData] = useState({ count: 1 })
+    let id = useId()
     const addNumber = () => {
         setNumber(number + 1)
     }
@@ -28,7 +29,7 @@ function Child (pros) {
 
     }
     return (<div>
-        <h3>函数组件</h3>
+        <h3 id={id}>函数组件</h3>
         <button onClick={addNumber} >增加</button>
         <span style={{ margin: '10px' }}>{number}</span>
         <button onClick={subNumber} >减少</button>
