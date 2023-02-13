@@ -24,6 +24,7 @@ import UseEffect from './RactApi/react-hook/UseEffect'
 import UseMemo from './RactApi/react-hook/UseMemo'
 import UseCallback from './RactApi/react-hook/UseCallback'
 import UseRef from './RactApi/react-hook/UseRef'
+import UseImperativeHandle from './RactApi/react-hook/UseImperativeHandle'
 
 
 
@@ -66,7 +67,7 @@ const items = [
                     { key: 'createRef', label: 'createRef', icon: '' },
                     // { key: 'createFactory', label: 'createFactory', icon: '' },
                     { key: 'isValidElement', label: 'isValidElement', icon: '' },
-                    { key: 'version', label: 'version', icon: '' },
+                    // { key: 'version', label: 'version', icon: '' },
                 ]
             },
             {
@@ -76,7 +77,7 @@ const items = [
                     { key: 'useMemo', label: 'useMemo', icon: '' },
                     { key: 'useCallback', label: 'useCallback', icon: '' },
                     { key: 'useRef', label: 'useRef', icon: '' },
-                    { key: 'createFactory1', label: 'createFactory', icon: '' },
+                    { key: 'useImperativeHandle', label: 'useImperativeHandle', icon: '' },
                     { key: 'isValidElement1', label: 'isValidElement', icon: '' },
                     { key: 'version1', label: 'version', icon: '' },
                 ]
@@ -208,6 +209,7 @@ const App = () => {
                             <Route exact path='/useMemo' element={<UseMemo />}></Route>
                             <Route exact path='/useCallback' element={<UseCallback />}></Route>
                             <Route exact path='/useRef' element={<UseRef />}></Route>
+                            <Route exact path='/useImperativeHandle' element={<UseImperativeHandle />}></Route>
 
 
                         </Routes>

@@ -1,13 +1,25 @@
 import React, { createRef, useState, forwardRef } from "react";
-// import ReactDOM from 'react-dom'
+// forwardRef
 // ref 的值根据节点的类型而有所不同：
 // 当 ref 属性用于 HTML 元素时，构造函数中使用 React.createRef() 创建的 ref 接收底层 DOM 元素作为其 current 属性。
 // 当 ref 属性用于自定义的 class 组件时， ref 对象接收组件的挂载实例作为其 current 属性。
 // 不能在函数组件上使用 `ref` 属性，因为函数组件没有实例。
 // 总结：为 DOM 添加 ref，那么我们就可以通过 ref 获取到对该DOM节点的引用。
 // 而给React组件添加 ref，那么我们可以通过 ref 获取到该组件的实例【不能在函数组件上使用 ref 属性，因为函数组件没有实例】。
-// 函数组件一般写法
+// React.forwardRef 通过创建组件的方式将其所接受的 ref 引用配置长传给其子孙组件。
+// forwardRef 有两个应用场景：为函数式组件指定引用；为高阶组件指定引用
+// 语法介绍
+// React.forwardRef(render);
+// 上面的代码中，forwardRef 函数接收一个名为 render 的函数(也可以将 render 方法理解成一个函数组件)，返回值是 react 组件；
+// const render = (props, ref) => {
+// 	return <></>;
+// }
+// 上面的代码中，render 函数接收 2 个参数，第一个参数为 props(父组件传递的参数对象)，第二个参数为 ref (React.createRef());
+// const Button = React.forwardRef((props, ref) {
+// 	return <></>;
+// });
 const Child1 = forwardRef((props, ref) => {
+    debugger
     let [number, setNumber] = useState(1)
     const addNumber = () => {
         setNumber(num => {
@@ -90,8 +102,8 @@ class ForwardRef extends React.Component {
     render () {
         let { number } = this.state
         return (<div>
-            <Child1 ref={this.childRef1} />
-            <Child2 ref={this.childRef2} />
+            <Child1 ref={this.childRef1} title={'孩子1'} />
+            <Child2 ref={this.childRef2} title={'孩子2'} />
             <div>
                 <h3>class 类组件</h3>
                 <button onClick={this.addNumber.bind(this)} >增加</button>

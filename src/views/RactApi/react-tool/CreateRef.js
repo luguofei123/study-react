@@ -1,4 +1,6 @@
 import React, { useState, createRef } from "react";
+// ref 属性只能被添加到 原生DOM元素 或者 React的 class 组件上。不能在 函数组件 上使用 ref 属性，因为函数组件没有实例。
+// 若想在函数组件上使用 ref 属性，可以通过 React.forwardRef 将 Ref 转发到函数组件内部的 原生 DOM 元素上。
 // 函数组件一般写法
 function Child (pros) {
     let [number, setNumber] = useState(1)
@@ -31,6 +33,7 @@ class CreateRef extends React.Component {
     }
     button1 = createRef()
     button2 = null
+    childref = null
 
     addNumber () {
         this.setState((state, props) => {
@@ -43,11 +46,13 @@ class CreateRef extends React.Component {
     componentDidMount () {
         console.log(this.button1.current)
         console.log(this.button2)
+        console.log(this.childref)
     }
     render () {
         let { number } = this.state
         return (<div  >
-            <Child />
+            {/* <Child ref={this.childref} /> ref不能工作，因为函数组件没有实例 */}
+            <Child ref={this.childref} />
             <div>
                 <h3>class 类组件</h3>
                 <button onClick={this.addNumber.bind(this)} ref={this.button1} >增加</button>

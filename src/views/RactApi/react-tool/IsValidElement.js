@@ -52,6 +52,7 @@ class IsValidElement extends React.Component {
                 <button onClick={this.addNumber.bind(this)} >增加</button>
                 <span style={{ margin: '10px' }}>{number}</span>
                 <button onClick={this.subNumber.bind(this)} >减少</button>
+                <div>React版本 {React.version}</div>
             </div>
         </div>)
     }

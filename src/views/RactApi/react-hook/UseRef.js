@@ -1,4 +1,7 @@
 import React, { useState, useRef } from "react";
+// 当 ref 属性用于 HTML 元素时，接收底层 DOM 元素作为其 current 属性;
+// 当 ref 属性用于自定义 class 组件时，ref 接收组件的挂载实例作为其 current 属性;
+// 不能在函数组件上使用 ref 属性，因为他们没有实例;
 // useRef： 可以获取当前元素的所有属性，并且返回一个可变的ref对象，并且这个对象只有current属性，可设置initialValue
 // const refContainer = useRef(initialValue);
 // 1 第一用来操作dom
