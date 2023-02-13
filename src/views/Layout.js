@@ -25,6 +25,10 @@ import UseMemo from './RactApi/react-hook/UseMemo'
 import UseCallback from './RactApi/react-hook/UseCallback'
 import UseRef from './RactApi/react-hook/UseRef'
 import UseImperativeHandle from './RactApi/react-hook/UseImperativeHandle'
+// react-dom
+import CreatePortal from './RactApi/react-dom/CreatePortal'
+import FlushSynct from './RactApi/react-dom/FlushSynct'
+import UnstableBatchedUpdates from './RactApi/react-dom/UnstableBatchedUpdates'
 
 
 
@@ -77,21 +81,14 @@ const items = [
                     { key: 'useMemo', label: 'useMemo', icon: '' },
                     { key: 'useCallback', label: 'useCallback', icon: '' },
                     { key: 'useRef', label: 'useRef', icon: '' },
-                    { key: 'useImperativeHandle', label: 'useImperativeHandle', icon: '' },
-                    { key: 'isValidElement1', label: 'isValidElement', icon: '' },
-                    { key: 'version1', label: 'version', icon: '' },
+                    { key: 'useImperativeHandle', label: 'unstable_batchedUpdates', icon: '' },
                 ]
             },
             {
                 key: 'react-dom', label: 'react-dom', icon: '', children: [
-                    { key: 'CreatElement11', label: 'CreatElement', icon: '' },
-                    { key: 'CloneElement11', label: 'CloneElement', icon: '' },
-                    { key: 'CreatContent11', label: 'CreatContent', icon: '' },
-                    { key: 'Children11', label: 'Children', icon: '' },
-                    { key: 'createRef11', label: 'createRef', icon: '' },
-                    { key: 'createFactory11', label: 'createFactory', icon: '' },
-                    { key: 'isValidElement11', label: 'isValidElement', icon: '' },
-                    { key: 'version11', label: 'version', icon: '' },
+                    { key: 'createPortal', label: 'createPortal', icon: '' },
+                    { key: 'flushSync', label: 'flushSync', icon: '' },
+                    { key: 'unstableBatchedUpdates', label: 'unstableBatchedUpdates', icon: '' },
                 ]
             },
             {
@@ -210,7 +207,10 @@ const App = () => {
                             <Route exact path='/useCallback' element={<UseCallback />}></Route>
                             <Route exact path='/useRef' element={<UseRef />}></Route>
                             <Route exact path='/useImperativeHandle' element={<UseImperativeHandle />}></Route>
-
+                            {/* react-dom */}
+                            <Route exact path='/createPortal' element={<CreatePortal />}></Route>
+                            <Route exact path='/flushSync' element={<FlushSynct />}></Route>
+                            <Route exact path='/unstableBatchedUpdates' element={<UnstableBatchedUpdates />}></Route>
 
                         </Routes>
                     </div>
