@@ -11,6 +11,7 @@ function Child (pros) {
     // useState有点类似于PureComponent,会进行一个比较浅的比较，如果是对象的时候直接传入并不会更新，这点一定要切记
     let [number, setNumber] = useState(1)
     let [countData, setcountData] = useState({ count: 1 })
+    // let data = pros.data
     let id = useId()
     const addNumber = () => {
         setNumber(number + 1)
@@ -30,6 +31,7 @@ function Child (pros) {
     }
     return (<div>
         <h3 id={id}>函数组件</h3>
+        {/* {data.countData.count} */}
         <button onClick={addNumber} >增加</button>
         <span style={{ margin: '10px' }}>{number}</span>
         <button onClick={subNumber} >减少</button>
@@ -67,7 +69,7 @@ class UseState extends React.Component {
     render () {
         let { number, countData } = this.state
         return (<div>
-            <Child />
+            <Child data={this.state} />
             <div>
                 <h3>class 类组件</h3>
                 <button onClick={this.addNumber.bind(this)} >增加</button>

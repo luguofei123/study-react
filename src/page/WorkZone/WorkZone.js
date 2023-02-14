@@ -1,6 +1,7 @@
 
 import React from "react";
 import uidata from './uidata'
+import widgets from './component/index'
 import TagName from './TagName'
 
 class WorkZone extends React.Component {
@@ -11,16 +12,18 @@ class WorkZone extends React.Component {
             let visibledData = []
             visibledData = data
             return visibledData.map(it => {
+                const COMP = widgets[it.name] || TagName
                 let item = JSON.parse(JSON.stringify(it))
                 if (item.children && item.children.length) {
                     if (item.parseChild === 0) {
-                        return <TagName className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item} >{item.label + '组件：' + item.name}</TagName>
+                        return <COMP className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item} ></COMP>
                     } else {
-                        return <TagName className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item}>{parser(item.children)}</TagName>
+                        return <COMP className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item}>{parser(item.children)}</COMP>
                     }
 
+
                 } else {
-                    return <TagName className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item} >{item.label + '组件：' + item.name}</TagName>
+                    return <COMP className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item} >{item.label + '组件：' + item.name}</COMP>
                 }
             })
         }
