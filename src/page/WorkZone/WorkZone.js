@@ -16,14 +16,14 @@ class WorkZone extends React.Component {
                 let item = JSON.parse(JSON.stringify(it))
                 if (item.children && item.children.length) {
                     if (item.parseChild === 0) {
-                        return <COMP className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item} ></COMP>
+                        return <COMP className={`${item.locked ? it.name : `wx-${item.key}-${it.name}`}`} key={item.key} uidata={item} ></COMP>
                     } else {
-                        return <COMP className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item}>{parser(item.children)}</COMP>
+                        return <COMP className={`${item.locked ? it.name : `wx-${item.key}-${it.name}`}`} key={item.key} uidata={item}>{parser(item.children)}</COMP>
                     }
 
 
                 } else {
-                    return <COMP className={`${item.locked ? '' : `wx-${item.key}`}`} key={item.key} uidata={item} >{item.label + '组件：' + item.name}</COMP>
+                    return <COMP className={`${item.locked ? it.name : `wx-${item.key}-${it.name}`}`} key={item.key} uidata={item} >{item.label + '组件：' + item.name}</COMP>
                 }
             })
         }

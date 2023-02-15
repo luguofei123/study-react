@@ -11,7 +11,7 @@ class TagName extends React.Component {
         const { width = '100%', marginleft = 0, marginright = 0, margintop = 0, marginbottom = 0 } = this.props || {}
         let styles = { width, height: '100%', marginleft, marginright, margintop, marginbottom }
         const bodyStyle = { ...styles, background: props.body_color || 'transparent' }
-        return (<div style={bodyStyle} id={this.props.uidata.key}>{children}</div>)
+        return (<span style={bodyStyle} id={this.props.uidata.key}>{children}</span>)
     }
 }
 
