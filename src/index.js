@@ -9,11 +9,11 @@ import { BrowserRouter as Router } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // 由于是使用脚手架创建项目，默认会开启严格模式，在严格模式下，React 的开发环境会刻意执行两次渲染，用于突出显示潜在问题。
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
 
-    <Router><App /></Router>
+  <Router><App /></Router>
 
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 

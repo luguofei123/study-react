@@ -1,5 +1,7 @@
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import WorkZone from '../page/WorkZone/WorkZone'
+import 'highlight.js/styles/zenburn.css'
+import 'antd/dist/reset.css';
 // 组件
 import Component from './RactApi/Component/Component'
 import PureComponent from './RactApi/Component/PureComponent'
@@ -33,18 +35,18 @@ import UnstableBatchedUpdates from './RactApi/react-dom/UnstableBatchedUpdates'
 
 
 import {
-    AppstoreOutlined,
-    BarChartOutlined,
-    CloudOutlined,
-    ShopOutlined,
-    TeamOutlined,
-    UploadOutlined,
+    // AppstoreOutlined,
+    // BarChartOutlined,
+    // CloudOutlined,
+    // ShopOutlined,
+    // TeamOutlined,
+    // UploadOutlined,
     UserOutlined,
     VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Layout, Menu, theme } from 'antd';
 import React from 'react';
-const { Header, Content, Sider } = Layout;
+const { Content, Sider } = Layout;
 
 const items = [
     { key: '/design', label: '单据设计器渲染', icon: UserOutlined, },
@@ -98,14 +100,14 @@ const items = [
             },
         ]
     },
-    {
-        key: '/3', label: '菜单1', icon: UploadOutlined
-    },
-    { key: '/4', label: '菜单1', icon: BarChartOutlined, },
-    { key: '/5', label: '菜单1', icon: CloudOutlined, },
-    { key: '/6', label: '菜单1', icon: AppstoreOutlined, },
-    { key: '/7', label: '菜单1', icon: TeamOutlined, },
-    { key: '/8', label: '菜单1', icon: ShopOutlined, }
+    // {
+    //     key: '/3', label: '菜单1', icon: UploadOutlined
+    // },
+    // { key: '/4', label: '菜单1', icon: BarChartOutlined, },
+    // { key: '/5', label: '菜单1', icon: CloudOutlined, },
+    // { key: '/6', label: '菜单1', icon: AppstoreOutlined, },
+    // { key: '/7', label: '菜单1', icon: TeamOutlined, },
+    // { key: '/8', label: '菜单1', icon: ShopOutlined, }
 ].map((item, index) => {
     if (item.children) {
         return {
@@ -161,12 +163,12 @@ const App = () => {
                     marginLeft: 200,
                 }}
             >
-                <Header
+                {/* <Header
                     style={{
                         padding: 0,
                         background: colorBgContainer,
                     }}
-                />
+                ></Header> */}
                 <Content
                     style={{
                         margin: '24px 16px 0',
