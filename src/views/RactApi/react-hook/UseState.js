@@ -59,9 +59,11 @@ function Child (pros) {
     return (<div>
         <h3 id={id}>函数组件 useState</h3>
         <Highlight className='javascript'>
-            {`  const [number, setNumber] = useState(1)
+            {`  
+  const [number, setNumber] = useState(1)
 
-  const [countData, setcountData] = useState({ count: 1 })`}</Highlight>
+  const [countData, setcountData] = useState({ count: 1 })
+  `}</Highlight>
         <Button onClick={addNumber} >同步增加</Button>
         <span style={{ margin: '10px' }}>{number}</span>
         <Button onClick={subNumber} >异步减少</Button>
@@ -103,7 +105,7 @@ class UseState extends React.Component {
     }
     changeObj () {
         const { countData } = this.state
-        countData.count--
+        countData.count++
         this.setState({ countData })
     }
     render () {
@@ -113,7 +115,8 @@ class UseState extends React.Component {
         console.log('parent----b', b)
         return (<div style={{ textAlign: 'left' }}>
             <Highlight className='javascript'>
-                {`  useState：定义变量，可以理解为他是类组件中的this.state
+                {`
+  useState：定义变量，可以理解为他是类组件中的this.state
 
   语法 const [state, setState] = useState(initialState);
 
@@ -123,12 +126,14 @@ class UseState extends React.Component {
 
   initialState：初始默认值
 
-  useState有点类似于PureComponent,会进行一个比较浅的比较，如果是对象的时候直接传入并不会更新，这点一定要切记`}</Highlight>
+  useState有点类似于PureComponent,会进行一个比较浅的比较，如果是对象的时候直接传入并不会更新，这点一定要切记
+  `}</Highlight>
             <Child data={this.state} />
             <div style={{ marginTop: '20px', marginBottom: '20px' }}>
                 <h3>class 类组件 setState</h3>
                 <Highlight className='javascript'>
-                    {`  this.state = {
+                    {`  
+  this.state = {
 
     number: 1,
 
@@ -138,7 +143,8 @@ class UseState extends React.Component {
 
      }
 
-  }`}</Highlight>
+  }`
+                    }</Highlight>
                 <Button onClick={this.addNumber.bind(this)} >同步增加</Button>
                 <span style={{ margin: '10px' }}>{number}</span>
                 <Button onClick={this.subNumber.bind(this)} >异步减少</Button>
@@ -146,7 +152,8 @@ class UseState extends React.Component {
                 <Button onClick={this.changeObj.bind(this)}>增加（useState会进行深比较）</Button>
             </div>
             <Highlight className='javascript'>
-                {`  useState 和 setState 同步/异步总结
+                {`  
+  useState 和 setState 同步/异步总结
 
   1 在正常的react的事件流里（如onClick等） setState和useState是异步执行的（不会立即更新state的结果）
 
@@ -155,6 +162,7 @@ class UseState extends React.Component {
   2 在setTimeout，Promise.then等异步事件中 setState和useState也是异步执行的多次执行setState和useState，
   
   都会调用一次render
+            
             `}</Highlight>
         </div>)
     }
