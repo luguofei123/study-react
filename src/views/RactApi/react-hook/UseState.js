@@ -91,7 +91,8 @@ class UseState extends React.Component {
         // 获取改变后的值 
         // 1 直接取 this.state.number + 1 
         // 2 延迟获取 this.state.number
-        // 3 利用useRef 缓存数据
+        // 3 生命周期钩子函数获取
+        // 4 this.setState的第二个回掉函数获取
         this.setState({ number: this.state.number + 1 }, () => {
             console.log('改变后能立即获取到number=====' + this.state.number)
         })
@@ -159,9 +160,9 @@ class UseState extends React.Component {
 
   多次执行setState和useState，只会调用一次重新渲染render, 并且setState和useState都会进行state的合并。
 
-  2 在setTimeout，Promise.then等异步事件中 setState和useState也是异步执行的多次执行setState和useState，
+  2 在setTimeout，Promise.then等异步事件中 setState和useState也是异步执行的，多次执行setState和useState，
   
-  都会调用一次render
+  都只会会调用一次render
             
             `}</Highlight>
         </div>)
