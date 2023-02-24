@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import Highlight from 'react-highlight'
+import { Button } from 'antd';
 // `useEffect`：副作用，你可以理解为是类组件的生命周期，也是我们最常用的钩子
 // 那么什么是副作用呢？
 // **副作用（Side Effect**：是指 function 做了和本身运算返回值无关的事，
@@ -21,16 +23,16 @@ function Child (pros) {
         })
     }
     const subNumber = () => {
-        setNumber(num => num + 1)
+        setNumber(num => num - 1)
     }
     // 模拟 class 组件的 componentDidMount 
     // 第二个参数是 [] （不依赖于任何 state）
     useEffect(() => {
-        console.log('加载完了')
+        console.log('子加载完了，在此发送一个 ajax 请求')
     }, [])
     // 模拟 class 组件的 componentDidMount 和 componentDidUpdate
     useEffect(() => {
-        console.log('在此发送一个 ajax 请求')
+        console.log('子组件加载或或更新了')
     })
     // 模拟 class 组件的 componentDidUpdate
     // 第二个参数就是依赖的 state
@@ -45,15 +47,15 @@ function Child (pros) {
         // 返回一个函数
         // 模拟 WillUnMount 组件销毁的时候 停止计时器
         return () => {
-            console.log('卸载了')
+            console.log('子组件卸载了')
             window.clearInterval(timerId)
         }
     }, [])
     return (<div>
         <h3>函数组件</h3>
-        <button onClick={addNumber} >增加</button>
+        <Button onClick={addNumber} >增加</Button>
         <span style={{ margin: '10px' }}>{number}</span>
-        <button onClick={subNumber} >减少</button>
+        <Button onClick={subNumber} >减少</Button>
     </div>)
 }
 // 类组件一般写法
@@ -74,16 +76,87 @@ class UseEffect extends React.Component {
     subNumber () {
         this.setState((state, props) => ({ number: state.number - 1 }))
     }
+    componentDidMount () {
+        console.log('父组件加载完了！')
+    }
+    componentDidUpdate () {
+        console.log('父组件更新了！')
+    }
+    componentWillUnmount () {
+        console.log('父组件卸载了！')
+    }
     render () {
         let { number } = this.state
-        return (<div>
+        return (<div style={{ textAlign: 'left' }}>
+            <Highlight className='javascript'>
+                {`
+  useEffect：副作用，你可以理解为是类组件的生命周期，也是我们最常用的钩子，useEffect会在渲染的内容更新到DOM上后执行,不会阻塞DOM的更新
+
+  1 模拟 class 组件的 componentDidMount 第二个参数是 [] （不依赖于任何 state）
+
+  useEffect(() => {
+
+    console.log('子加载完了，在此发送一个 ajax 请求')
+
+  }, [])
+
+  2 模拟 class 组件的 componentDidMount 和 componentDidUpdate
+
+  useEffect(() => {
+
+    console.log('子组件加载或或更新了')
+
+  })
+
+  3 模拟 class 组件的 componentDidUpdate 第二个参数就是依赖的 state
+
+  useEffect(() => {
+
+      console.log('number更新了')
+
+  }, [number])
+
+  4 模拟 class 组件的 componentWillUnmount
+
+  useEffect(() => {
+
+      let timerId = window.setInterval(() => {
+
+          console.log(Date.now())
+
+      }, 1000)
+
+      // 返回一个函数 模拟 WillUnMount 组件销毁的时候 停止计时器
+
+      return () => {
+
+          console.log('子卸载了')
+
+          window.clearInterval(timerId)
+
+      }
+      
+  }, [])
+
+  `}</Highlight>
             <Child />
-            <div>
+            <div style={{ margin: '10px 0px 10px 0px' }}>
                 <h3>class 类组件</h3>
-                <button onClick={this.addNumber.bind(this)} >增加</button>
+                <Button onClick={this.addNumber.bind(this)} >增加</Button>
                 <span style={{ margin: '10px' }}>{number}</span>
-                <button onClick={this.subNumber.bind(this)} >减少</button>
+                <Button onClick={this.subNumber.bind(this)} >减少</Button>
             </div>
+            <Highlight className='javascript'>
+                {`  
+  useEffect 用法总结
+
+  1 模拟 componentDidMount    用例子 1
+
+  2 模拟 componentDidUpdate   用例子 3
+  
+  3 模拟 componentWillUnmount 用例子 4
+            
+            `}</Highlight>
         </div>)
     }
 
