@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useMemo } from "react";
+import Highlight from 'react-highlight'
+import { Button } from 'antd';
 // **useMemo**:与`memo`的理念上差不多，都是判断是否满足当前的限定条件来决定是否执行`callback`函数，
 // 而`useMemo`的第二个参数是一个数组，通过这个数组来判定是否更新回掉函数
 // 当一个父组件中调用了一个子组件的时候，父组件的 state 发生变化，会导致父组件更新，而子组件虽然没有发生改变，但也会进行更新。
@@ -7,12 +9,10 @@ import React, { useState, useEffect, useMemo } from "react";
 // 我们理想的状态是各个模块只进行自己的更新，不要相互去影响，那么此时用`useMemo`是最佳的解决方案。
 // 这里要尤其注意一点，**只要父组件的状态更新，无论有没有对自组件进行操作，子组件都会进行更新**，`useMemo`就是为了防止这点而出现的
 
-
 // useMemo是用来缓存计算属性的，它会在发现依赖未发生改变的情况下返回旧的计算属性值的地址。
 // useMemo jue不是用的越多越好，缓存这项技术本身也需要成本。
 // useMemo的使用场景之一是:只需要给拥有巨大计算量的计算属性缓存即可。
 // useMemo的另一个使用场景是：当有计算属性被传入子组件，并且子组件使用了react.memo进行了缓存的时候,为了避免子组件不必要的渲染时使用
-
 
 // 作用：
 // 首先useMemo它使用来做缓存用的，只有当一个依赖项改变的时候才会发生变化，否则拿缓存的值，就不用在每次渲染的时候再做计算
@@ -31,11 +31,28 @@ import React, { useState, useEffect, useMemo } from "react";
 // 如果用useMemo返回一个数据的话， 而这个数据里面一些是常量，一些是变量的话，只有对应的变量会发生变化，
 // 而其它的常量是不会变化的，所以如果要对useMemo的返回值进行一些splice操作的话，是无法起作用的。
 
+// memo 使用例子  `true`则不更新，为`false`更新
+// const isEqual(prevProps, nextProps) {
+//     // 自定义对比方法
+//   }
+
+//   const MemoriedComp = React.memo(Comp, isEqual);
+
+
 // 因为其自己本身已经定义好的数据结构是没办法改变的，改变的只是里面的变量
 // 函数组件一般写法
+
+// const Son = memo((pros) => {
+//     console.log(111111)
+//     return <div>
+//         <Button>{pros.count1}</Button>
+//         <Button>{pros.count2}</Button>
+//     </div>
+// })
 function Child (pros) {
     let [number, setNumber] = useState(1)
-    let [count, setCount] = useState(100)
+    let [count1, setCount1] = useState(100)
+    let [count2, setCount2] = useState(1000)
     const addNumber = () => {
         setNumber(num => {
             debugger
@@ -48,25 +65,54 @@ function Child (pros) {
     // 通过usememo后，只有count改变后才会重新计算
     const useMemoMessage1 = useMemo(() => {
         console.log('我计算了一遍useMemoMessage1')
-        return '缓存数据1=' + count
-    }, [count])
+        return 'useMemoMessage1=' + count1
+    }, [count1])
     // 对比数据 只要组件重新渲染，旧会执行一次
     const useMemoMessage2 = () => {
         console.log('我计算了一遍useMemoMessage2')
-        return '缓存数据2=' + count
+        return 'useMemoMessage2=' + count2
     }
     useEffect(() => {
         console.log('子组件1重新渲染')
     })
     return (<div>
-        <h3>函数子组件1</h3>
-        <button onClick={addNumber} >增加</button>
+        <h3>函数子组件</h3>
+        <Button onClick={addNumber} >增加</Button>
         <span style={{ margin: '10px' }}>{number}</span>
-        <button onClick={subNumber} >减少</button>
-        <div><button onClick={() => { setCount(num => num + 1) }} >count++</button></div>
-        <div>{count}</div>
-        <div><span>{useMemoMessage1}</span></div>
-        <div><span>{useMemoMessage2()}</span></div>
+        <Button onClick={subNumber} >减少</Button>
+        <div style={{ margin: '10px 0' }}>
+            <Highlight className='javascript'>
+                {`
+    通过usememo后，只有count改变后才会重新计算
+
+    const useMemoMessage1 = useMemo(() => {
+
+        console.log('我计算了一遍useMemoMessage1')
+
+        return 'useMemoMessage1=' + count1
+
+    }, [count1])
+
+    对比数据 只要组件重新渲染，就会执行一次
+
+    const useMemoMessage2 = () => {
+
+        console.log('我计算了一遍useMemoMessage2')
+
+        return 'useMemoMessage2=' + count2
+
+    }
+  `}</Highlight>
+            <Button onClick={() => { setCount1(count => count + 1) }} >测试memo count1++</Button>
+            <span style={{ margin: '10px 10px' }}>{count1}</span>
+            <span >{useMemoMessage1}</span>
+            <div style={{ margin: '10px 0px' }}>
+                <Button onClick={() => { setCount2(count => count + 1) }} >测试memo count2++</Button>
+                <span style={{ margin: '10px 10px' }}>{count2}</span>
+                <span style={{ margin: '10px 10px' }}>{useMemoMessage2()}</span>
+            </div>
+            {/* <Son count1={useMemoMessage1} count2={useMemoMessage2()} /> */}
+        </div>
     </div>)
 }
 // 类组件一般写法
@@ -89,14 +135,35 @@ class UseMemo extends React.Component {
     }
     render () {
         let { number } = this.state
-        return (<div>
+        return (<div style={{ textAlign: 'left' }}>
+            <Highlight className='javascript'>
+                {`
+  useMemo：判断是否满足当前的限定条件来决定是否执行callback函数
+
+  语法： const value = useMemo(callback,[dep]);
+
+  当依赖dep 发生变化的时候才执行callback,callback返回的是一个值； dep没有发生变化，组件将直接使用缓存的值；
+  `}</Highlight>
             <Child />
-            <div>
-                <h3>class 类组件</h3>
-                <button onClick={this.addNumber.bind(this)} >增加</button>
+            <div style={{ marginTop: '20px', marginBottom: '20px' }}>
+                <h3>class 父类组件</h3>
+                <Button onClick={this.addNumber.bind(this)} >增加</Button>
                 <span style={{ margin: '10px' }}>{number}</span>
-                <button onClick={this.subNumber.bind(this)} >减少</button>
+                <Button onClick={this.subNumber.bind(this)} >减少</Button>
             </div>
+            <Highlight className='javascript'>
+                {`  
+  useMemo 用法总结
+
+  1 useMemo 是用来缓存计算属性的，它会在发现依赖未发生改变的情况下返回旧的计算属性值的地址
+
+  2 useMemo 绝不是用的越多越好，缓存这项技术本身也需要成本。
+  
+  3 useMemo 的使用场景之一是:只需要给拥有巨大计算量的计算属性缓存即可。
+
+  4 useMemo 的另一个使用场景是：当有计算属性被传入子组件，并且子组件使用了react.memo进行了缓存的时候,为了避免子组件不必要的渲染时使用
+            
+            `}</Highlight>
         </div>)
     }
 
