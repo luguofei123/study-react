@@ -34,6 +34,8 @@ import UseImperativeHandle from './RactApi/react-hook/UseImperativeHandle'
 import CreatePortal from './RactApi/react-dom/CreatePortal'
 import FlushSynct from './RactApi/react-dom/FlushSynct'
 import UnstableBatchedUpdates from './RactApi/react-dom/UnstableBatchedUpdates'
+// formily 测试
+import Formily from './Formily/Formily'
 
 
 
@@ -43,7 +45,7 @@ import {
     // CloudOutlined,
     // ShopOutlined,
     // TeamOutlined,
-    // UploadOutlined,
+    UploadOutlined,
     UserOutlined,
     VideoCameraOutlined,
 } from '@ant-design/icons';
@@ -103,9 +105,9 @@ const items = [
             },
         ]
     },
-    // {
-    //     key: '/3', label: '菜单1', icon: UploadOutlined
-    // },
+    {
+        key: 'Formily', label: 'Formily', icon: UploadOutlined
+    },
     // { key: '/4', label: '菜单1', icon: BarChartOutlined, },
     // { key: '/5', label: '菜单1', icon: CloudOutlined, },
     // { key: '/6', label: '菜单1', icon: AppstoreOutlined, },
@@ -216,7 +218,8 @@ const App = () => {
                             <Route exact path='/createPortal' element={<CreatePortal />}></Route>
                             <Route exact path='/flushSync' element={<FlushSynct />}></Route>
                             <Route exact path='/unstableBatchedUpdates' element={<UnstableBatchedUpdates />}></Route>
-
+                            {/* formily */}
+                            <Route exact path='/Formily' element={<Formily />}></Route>
                         </Routes>
                     </div>
                 </Content>

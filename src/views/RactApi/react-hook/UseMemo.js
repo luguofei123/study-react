@@ -142,7 +142,7 @@ class UseMemo extends React.Component {
 
   语法： const value = useMemo(callback,[dep]);
 
-  当依赖dep 发生变化的时候才执行callback,callback返回的是一个值； dep没有发生变化，组件将直接使用缓存的值；
+  当依赖dep 发生变化的时候才执行callback,callback返回的是一个计算结果； dep没有发生变化，组件将直接使用缓存的结果；
   `}</Highlight>
             <Child />
             <div style={{ marginTop: '20px', marginBottom: '20px' }}>

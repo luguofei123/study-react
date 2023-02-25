@@ -1,4 +1,6 @@
 import React, { useState, useCallback, memo } from "react";
+import Highlight from 'react-highlight'
+import { Button } from 'antd';
 // useCallback与useMemo极其类似,可以说是一模一样，唯一不同的是useMemo返回的是函数运行的结果，而useCallback返回的是函数
 // 注意：这个函数是父组件传递子组件的一个函数，防止做无关的刷新，其次，这个组件必须配合memo,否则不但不会提升性能，还有可能降低性能
 // useCallback的作用其实是用来避免子组件不必要的reRender
@@ -35,9 +37,9 @@ function Child (pros) {
     }
     return (<div>
         <h3>函数子组件</h3>
-        <button onClick={addNumber} >增加</button>
+        <Button onClick={addNumber} >增加</Button>
         <span style={{ margin: '10px' }}>{number}</span>
-        <button onClick={subNumber} >减少</button>
+        <Button onClick={subNumber} >减少</Button>
         <div>count: {count}</div>
         <Son func={func1} title={'callback点击'} />
         <Son func={func2} title={'普通点击'} />
@@ -46,7 +48,7 @@ function Child (pros) {
 // memo 函数组件使用例子  `true`则不更新，为`false`更新
 const Son = memo((props) => {
     console.log(props.title)
-    return <button onClick={props.func}>{props.title}</button>
+    return <Button onClick={props.func}>{props.title}</Button>
 })
 // 类组件一般写法
 class UseCallback extends React.Component {
@@ -71,13 +73,21 @@ class UseCallback extends React.Component {
     }
     render () {
         let { number } = this.state
-        return (<div>
+        return (<div style={{ textAlign: 'left' }}>
+            <Highlight className='javascript'>
+                {`
+  useCallback与useMemo极其类似,可以说是一模一样，唯一不同的是useMemo返回的是函数运行的结果，而useCallback返回的是函数
+
+  语法： const func = useCallback(callback,[dep]);
+
+  当依赖dep 发生变化的时候才执行callback,callback才会重新执行； dep没有发生变化，组件将直接使用缓存的结果；
+  `}</Highlight>
             <Child />
             <div>
                 <h3>class 父类组件</h3>
-                <button onClick={this.addNumber.bind(this)} >增加</button>
+                <Button onClick={this.addNumber.bind(this)} >增加</Button>
                 <span style={{ margin: '10px' }}>{number}</span>
-                <button onClick={this.subNumber.bind(this)} >减少</button>
+                <Button onClick={this.subNumber.bind(this)} >减少</Button>
             </div>
         </div>)
     }
