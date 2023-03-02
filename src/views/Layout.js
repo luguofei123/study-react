@@ -4,7 +4,7 @@ import 'highlight.js/styles/a11y-dark.css'
 // a11y-dark
 // androidstudio
 // atelier-cave-dark
-import 'antd/dist/reset.css';
+// import 'antd/dist/reset.css';
 // 组件
 import Component from './RactApi/Component/Component'
 import PureComponent from './RactApi/Component/PureComponent'

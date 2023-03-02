@@ -157,7 +157,7 @@ class UseMemo extends React.Component {
 
   1 useMemo 是用来缓存计算属性的，它会在发现依赖未发生改变的情况下返回旧的计算属性值的地址
 
-  2 useMemo 绝不是用的越多越好，缓存这项技术本身也需要成本。
+  2 useMemo jue不是用的越多越好，缓存这项技术本身也需要成本。
   
   3 useMemo 的使用场景之一是:只需要给拥有巨大计算量的计算属性缓存即可。
 

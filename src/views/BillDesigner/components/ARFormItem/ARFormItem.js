@@ -52,12 +52,8 @@ export default class ARFormItem extends React.Component {
     // if (itemProps.show_label === 0 || domnode.position === 'line') {
     //   delete itemProps.label
     // }
-
     return (
-      // <Form.Item {...itemProps} onClick={this.handleFormItemClick} onChange={this.handleChange} />
-      <Form.Item label="Username" name="username" >
-        {this.props.children}
-      </Form.Item>
+      <Form.Item {...this.props} onClick={this.handleFormItemClick} onChange={this.handleChange} />
     )
   }
 }

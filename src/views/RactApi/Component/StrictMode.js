@@ -39,12 +39,12 @@ class StrictMode extends React.Component {
     render () {
         let { number } = this.state
         // 主要有以下帮助：
-        // - [识别具有不安全生命周期的组件](https://reactjs.org/docs/strict-mode.html#identifying-unsafe-lifecycles)
+        // - [识别具有不全生命周期的组件](https://reactjs.org/docs/strict-mode.html#identifying-unsafe-lifecycles)
         // - [关于旧版字符串引用 API 使用的警告](https://reactjs.org/docs/strict-mode.html#warning-about-legacy-string-ref-api-usage)
         // - [关于不推荐使用 findDOMNode 的警告](https://reactjs.org/docs/strict-mode.html#warning-about-deprecated-finddomnode-usage)
         // - [检测意外的副作用](https://reactjs.org/docs/strict-mode.html#detecting-unexpected-side-effects)
         // - [检测遗留上下文 API](https://reactjs.org/docs/strict-mode.html#detecting-legacy-context-api)
-        // - [确保可重用状态](https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state)
+        // - [确保重用状态](https://reactjs.org/docs/strict-mode.html#ensuring-reusable-state)
         return (<React.StrictMode><div>
             <Child />
             <div>

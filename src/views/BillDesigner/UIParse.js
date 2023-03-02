@@ -2,7 +2,7 @@
 import React from "react"
 import widgets from "./components/index"
 import dataUi from './mock'
-// import { Form } from 'antd'
+import { Form } from 'antd'
 // import ARPanel from './components/ARPanel/index'
 // import ARFormItem from './components/ARFormItem/index'
 // import ARInput from './components/ARInput/index'
@@ -18,8 +18,9 @@ class BillDesigner extends React.Component {
             return Pwrap ? <Pwrap {...wrapProps} >{content}</Pwrap> : content
         }
         const parser = (data) => {
+            debugger
             let visibledData = []
-            visibledData = data
+            visibledData = [data]
             return visibledData.map(it => {
                 console.log(widgets)
                 const COMP = widgets[it.name]
@@ -61,8 +62,12 @@ class BillDesigner extends React.Component {
 
             })
         }
+        if (this.props.uidata) {
+            return <>{parser(this.props.uidata)}</>
+        } else {
+            return <>{parser([dataUi])}</>
+        }
 
-        return <>{parser([dataUi])}</>
 
     }
 

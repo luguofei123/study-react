@@ -1,5 +1,5 @@
 import React from 'react';
-import UIParser from '../UIParser'
+import UIParser from '../UIParse'
 import {
   DragOutlined, DeleteOutlined
 } from '@ant-design/icons';
@@ -24,8 +24,8 @@ export const LayoutItem = ({ item, provided, onDelete, onMouseEnter, onMouseLeav
     styles.width = provided.props.style.width
   }
 
-  if('viewH' in provided.props && provided.props.viewH !== null 
-    && 'viewGridH' in provided.props && provided.props.viewGridH !== null){
+  if ('viewH' in provided.props && provided.props.viewH !== null
+    && 'viewGridH' in provided.props && provided.props.viewGridH !== null) {
     item.h = provided.props.viewH
     item.GridH = provided.props.viewGridH
   }
@@ -37,7 +37,7 @@ export const LayoutItem = ({ item, provided, onDelete, onMouseEnter, onMouseLeav
   let offW = marginleft + marginright + 4
   let offH = margintop + marginbottom + 2
   let offw = offW / (item.GridW / 24)
-  if (position && position !=='default') {
+  if (position && position !== 'default') {
     styles.position = parentKey === 'root' ? 'fixed' : 'absolute'
     styles.zIndex = 6;
   }
@@ -65,12 +65,12 @@ export const LayoutItem = ({ item, provided, onDelete, onMouseEnter, onMouseLeav
   if (item.name === 'LCDTable') {
     //暂时一个表头，要是有多个表头再加
     const headerRowCount = 1
-    toolbarTop = 31 * headerRowCount + (item.props && item.props.show_label?35:0)
+    toolbarTop = 31 * headerRowCount + (item.props && item.props.show_label ? 35 : 0)
   }
 
   let style = {}
   // 表格工具条使用
-  if (['form', 'card', 'table', 'toolbar', 'root'].includes(item.nodeType)&&!['top','bottom'].includes(item.position) && item.children && item.parentName !=='LCDTabs') {
+  if (['form', 'card', 'table', 'toolbar', 'root'].includes(item.nodeType) && !['top', 'bottom'].includes(item.position) && item.children && item.parentName !== 'LCDTabs') {
     contentItem = JSON.parse(JSON.stringify(item))
     //const iheader = contentItem.children.findIndex(it => ['LCDCardHeader'].includes(it.name))
     const iheader = contentItem.children.findIndex(it => it.position === 'top')
@@ -100,7 +100,7 @@ export const LayoutItem = ({ item, provided, onDelete, onMouseEnter, onMouseLeav
         tableToolItem.w = tableToolItem.w - offw
         tableToolClassName = `layout-item table-toolbar ${tableToolItem.locked ? 'locked' : ``} wx-${tableToolItem.key}`
         const headerRowCount = contentItem.hasOwnProperty('headerRowCount') ? contentItem.headerRowCount : 1
-        const toolbarTop = 31 * headerRowCount + (item.props && item.props.show_label?35:0)
+        const toolbarTop = 31 * headerRowCount + (item.props && item.props.show_label ? 35 : 0)
         style.top = `${toolbarTop + margintop}px`
         tableToolStyle.marginLeft = `${marginleft + (marginleft ? 2 : 0)}px`;
         tableToolStyle.marginRight = `${marginright + (marginright ? 2 : 0)}px`;
@@ -125,10 +125,10 @@ export const LayoutItem = ({ item, provided, onDelete, onMouseEnter, onMouseLeav
     let contentChildren = []
     // 表格行操作是表格单独处理
     if (!contentItem.locked) {
-      contentChildren = contentItem.children.filter(it => !['bottom','top'].includes(it.position))
+      contentChildren = contentItem.children.filter(it => !['bottom', 'top'].includes(it.position))
     } else {
       //contentChildren = contentItem.children.filter(it => !['LCDToolbar'].includes(it.name))
-      contentChildren = contentItem.children.filter(it => !['bottom','top'].includes(it.position))
+      contentChildren = contentItem.children.filter(it => !['bottom', 'top'].includes(it.position))
     }
 
     contentItem.children = contentChildren
@@ -155,15 +155,15 @@ export const LayoutItem = ({ item, provided, onDelete, onMouseEnter, onMouseLeav
   let shadow = contentItem.props?.shadow
   let shadowclass = ''
   let _position = contentItem.position
-  if(shadow === 1 && _position) {
+  if (shadow === 1 && _position) {
     shadowclass = `lcd-box-shadow-${_position}`
   }
   let setfixed = contentItem.props?.setfixed
   let setfixedclass = ''
-  if( setfixed === 1 ){
+  if (setfixed === 1) {
     setfixedclass = `layout-item-setfixed`
   }
-  
+
   return (
     item.locked ?
       <div

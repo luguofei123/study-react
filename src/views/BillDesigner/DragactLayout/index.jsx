@@ -1,12 +1,13 @@
 import React from 'react';
+import './index.less';
 // import { Dragact } from 'dragact'
 import { Dragact } from './lib/dragact'
-import './index.less';
-import { LayoutItem } from './LayoutItem.jsx'
+// import { LayoutItem } from './LayoutItem.jsx'
 import LayoutItemMemo from './LayoutItemMemo'
-import u from '_u/umbrella'
-import ht from '../utils/HelperTools'
-import { showContextMenu } from '../utils/ContextMenu.jsx'
+import u from '../../../utils/umbrella'
+// import ht from '../utils/HelperTools'
+// import { showContextMenu } from '../utils/ContextMenu.jsx'
+const ht = {}
 class DragactLayout extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -14,30 +15,30 @@ class DragactLayout extends React.PureComponent {
   dragactNode = null;
   refCont = React.createRef()
 
-  handleOnDragStart() {
+  handleOnDragStart () {
     ht.hideWidgetPopupToolbar()
   }
-  handleOnDrag(node) {
+  handleOnDrag (node) {
 
   }
-  async handleOnDragEnd(node, newLayout, resized) {
-    const {GridX, GridY, w, h, wPx,hPx,UniqueKey:key}=node
-    const curNode=ht.getNodeByKey(key)
+  async handleOnDragEnd (node, newLayout, resized) {
+    const { GridX, GridY, w, h, wPx, hPx, UniqueKey: key } = node
+    const curNode = ht.getNodeByKey(key)
     const containerKey = newLayout[0].parentKey
     let parentNode = ht.getNodeByKey(containerKey)
     // const newLayout = this.dragactNode.getLayout();
     await ht.updateTreeNodeByDragactLayout(parentNode, newLayout, resized)
     setTimeout(() => {
-      ht.updateNode({GridX, GridY, w, h, GridW:wPx,GridH:hPx,key})
+      ht.updateNode({ GridX, GridY, w, h, GridW: wPx, GridH: hPx, key })
       // ht.updateNode(parentNode)
       // ht.updateGridWidthByRate(containerKey)
     }, 5)
   }
 
-  hanldeOnDelete(item) {
+  hanldeOnDelete (item) {
     ht.deleteNode(item)
   }
-  handleOnClick(e, item) {
+  handleOnClick (e, item) {
 
     if (!item.locked) {
       ht.selectDom(item.key);
@@ -45,7 +46,7 @@ class DragactLayout extends React.PureComponent {
     }
   }
 
-  handleOnMouseEnter(e, item) {
+  handleOnMouseEnter (e, item) {
     u('.layout-item.actived').removeClass('actived')
     //u('.layout-item.selected').removeClass('selected')
     const uDom = u(e.target).closest('.layout-item');
@@ -57,17 +58,17 @@ class DragactLayout extends React.PureComponent {
     // ht.setHandlePosition(item)
   }
   //鼠标右键
-  handleOnContextMeun(event, item) {
-    showContextMenu(item, event)
+  handleOnContextMeun (event, item) {
+    // showContextMenu(item, event)
   }
-  handleOnMouseLeave(e, item) {
+  handleOnMouseLeave (e, item) {
     const uDom = u(e.target).closest('.layout-item')
     if (uDom.length > 0) {
       uDom.removeClass('actived')
     }
   }
   //横向排序
-  getSortLayout({ cols, layout, flowX }) {
+  getSortLayout ({ cols, layout, flowX }) {
     let sortLayouts = [], topLayouts = [], bottomLayouts = [], maxY = 0
     layout.forEach(lay => {
       const { position = '', h, GridY } = lay
@@ -228,17 +229,17 @@ class DragactLayout extends React.PureComponent {
     return style
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     this.setState = () => false;
   }
-  componentDidMount() {
+  componentDidMount () {
     // const { utools, containerKey, key } = this.props
     // utools.storeContRef(this.refCont,key||containerKey) 
   }
-  render() {
-
+  render () {
+    debugger
     const { margin, width, rowHeight, extraStyle, autoHeight, placeholder, locked, cols, layout, flowX, flexAlign = 'center', isRoot } = this.props
-    const toolbars = layout.filter(lay => !!lay.position)
+    // const toolbars = layout.filter(lay => !!lay.position)
     ///////////////////////
     const dragact = this.getDragDom(layout)
 
@@ -257,11 +258,11 @@ class DragactLayout extends React.PureComponent {
     /////////////////////////
     return (
       <div
-        id={ isRoot ? 'contentRoot' : null }
+        id={isRoot ? 'contentRoot' : null}
         className={this.props.className}
         style={dagStyle}
       >
-        {layout.length ? dragact : ''}
+        {layout?.length ? dragact : ''}
       </div>
     )
   }
