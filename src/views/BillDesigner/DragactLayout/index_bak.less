@@ -1,0 +1,120 @@
+@charset 'utf-8';
+.dragact-layout {
+    .layout-item {
+        border: 1px #ccc dashed;
+        &-content {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            padding: 0px;
+            .ant-form-item,
+            .ant-form-item-control,
+            .ant-form-item-control-input {
+                textarea {
+                    height: 100%;
+                }
+            }
+        }
+        &-header {
+            position: absolute;
+            top: 2px;
+            left: 5px;
+            right: 5px;
+            min-height: 40px;
+            z-index: 9;
+        }
+        &-footer {
+            position: absolute;
+            bottom: 2px;
+            left: 5px;
+            right: 5px;
+            min-height: 40px;
+            z-index: 9;
+        }
+        /*-------------------------*/
+        .ant-card-head {
+            min-height: 36px;
+        }
+        .ant-card-head-title {
+            padding: 8px 0;
+        }
+        .ant-form-item {
+            margin: 5px 2px;
+        }
+        &.locked {
+            border: none;
+            padding: 0;
+        }
+    }
+    .table-toolbar {
+        position: absolute;
+        display: inline-block;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        height: 34px;
+        z-index: 9;
+    }
+    .layout-item-handle {
+        position: absolute;
+        display: none;
+        top: 2px;
+        right: 2px;
+        padding: 0 0px;
+        background: #ddd;
+        border-radius: 2px;
+        z-index: 999;
+        font-size: 15px;
+        text-align: center;
+        height: 20px;
+        &-drag {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            top: 5px;
+            cursor: move;
+        }
+        &-del {
+            display: inline-block;
+            margin: -2px 3px 3px;
+            color: #FF4D4F;
+            cursor: default;
+            svg {
+                margin-top: -10px;
+            }
+        }
+        &.vertical {
+            .layout-item-handle-drag,
+            .layout-item-handle-del {
+                padding: 0px 3px;
+            }
+            .layout-item-handle-del {
+                padding-bottom: 6px
+            }
+        }
+        &-resize {
+            position: absolute;
+            display: none;
+            width: 16px;
+            height: 16px;
+            right: 2px;
+            bottom: 2px;
+            cursor: se-resize;
+            border-right: 1px solid #1a73e8;
+            border-bottom: 1px solid #1a73e8;
+            z-index: 999;
+        }
+    }
+    .layout-item.actived,
+    .layout-item.selected {
+        border: 1px #1a73e8 solid;
+        /*cursor: -webkit-grab;*/
+        z-index: 3 !important;
+        &>.layout-item-handle,
+        &>.layout-item-handle-resize {
+            display: inline-block;
+        }
+    }
+}

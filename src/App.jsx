@@ -72,7 +72,7 @@ class App extends React.Component {
   render () {
     return (
 
-      <ConfigProvider locale={zhCN}>
+      <ConfigProvider>
         <Provider store={store}>
           <Router />
         </Provider>

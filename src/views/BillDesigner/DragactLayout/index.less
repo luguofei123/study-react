@@ -1,0 +1,263 @@
+@charset 'utf-8';
+.dragact-layout {
+    .layout-item {
+        /* border: 1px #ccc dashed; */
+        &-content {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            padding: 0px;
+            .ant-form-item,
+            .ant-form-item-control,
+            .ant-form-item-control-input {
+                textarea {
+                    height: 100%;
+                }
+            }
+        }
+        &-header {
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            right: 1px;
+            height: 36px;
+            z-index: 9;
+        }
+        &-footer {
+            position: absolute;
+            bottom: 1px;
+            left: 1px;
+            right: 1px;
+            height: 40px;
+            z-index: 9;
+        }
+        //      数字调整
+        
+        &-setfixed{
+            position: fixed !important;
+            height:100%!important;
+            .ant-tabs-content-holder{
+                position:relative;
+
+                .ant-tabs-tabpane{
+                  height:100%!important;
+                  .DraggerLayout{
+                    height:100%!important;
+                    .layout-item{
+                      height:100%!important;
+                    }
+                  }
+                }
+               
+
+            }
+            
+        }
+        /*-------------------------*/
+        .ant-card-head {
+            min-height: 36px;
+        }
+        .ant-card-head-title {
+            padding: 8px 0;
+        }
+        .ant-form-item {
+            margin: 4px 2px;
+        }
+        &.locked {
+            border: none;
+            padding: 0;
+            .layout-item,
+            .layout-item-content {
+                &::before,
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+    .table-toolbar {
+        position: absolute;
+        top: 2px;
+        left: 1px;
+        right: 1px;
+        min-height: 34px;
+        z-index: 9;
+    }
+    .layout-item-handle {
+        position: absolute;
+        display: none;
+        top: 2px;
+        right: 2px;
+        padding: 0 0px;
+        background: #ddd;
+        border-radius: 2px;
+        z-index: 999;
+        font-size: 15px;
+        text-align: center;
+        height: 20px;
+        &-drag {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
+            top: 5px;
+            cursor: move;
+        }
+        &-dragicon {
+            display: inline-block;
+            margin: -2px 3px 3px;
+            color: #02b1fd;
+            cursor: pointer;
+            svg {
+                margin-top: -10px;
+            }
+        }
+        &-del {
+            display: inline-block;
+            margin: -2px 3px 3px;
+            color: #FF4D4F;
+            cursor: default;
+            svg {
+                margin-top: -10px;
+            }
+        }
+        &.vertical {
+            .layout-item-handle-drag,
+            .layout-item-handle-del {
+                padding: 0px 3px;
+            }
+            .layout-item-handle-del {
+                padding-bottom: 6px
+            }
+        }
+        &-resize {
+            position: absolute;
+            display: none;
+            width: 14px;
+            height: 14px;
+            right: 2px;
+            bottom: 2px;
+            cursor: se-resize;
+            /* cursor: w-resize; */
+            border-right: 1px solid #02b1fd;
+            border-bottom: 1px solid #02b1fd;
+            z-index: 999;
+            &.s-resize {
+                position: absolute;
+                border: none;
+                bottom: 0;
+                left: 0px;
+                width: calc(100% - 20px);
+                height: 5px;
+                cursor: s-resize;
+            }
+            &.w-resize {
+                position: absolute;
+                border: none;
+                top: 0px;
+                right: 0;
+                width: 5px;
+                height: calc(100% - 20px);
+                cursor: w-resize;
+            }
+        }
+    }
+    .layout-item.actived,
+    .layout-item.selected {
+        /* border: 1px #02b1fd solid; */
+        /* cursor: -webkit-grab; */
+        z-index: 3 !important;
+        &>.layout-item-handle,
+        &>.layout-item-handle-resize {
+            display: inline-block;
+        }
+    }
+    /********画线**********/
+    .layout-item:not(.locked) {
+        -moz-user-select: none;
+        /*火狐*/
+        -webkit-user-select: none;
+        /*webkit浏览器*/
+        -ms-user-select: none;
+        /*IE10*/
+        -khtml-user-select: none;
+        /*早期浏览器*/
+        -webkit-touch-callout: none;
+        user-select: none;
+        &::before {
+            content: '';
+            position: absolute;
+            border-top: 1px #ccc dashed;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 3;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            border-bottom: 1px #ccc dashed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+        }
+        .layout-item-content {
+            &::before {
+                content: '';
+                position: absolute;
+                border-right: 1px #ccc dashed;
+                bottom: 0;
+                left: 0;
+                top: 0;
+                z-index: 3;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                border-right: 1px #ccc dashed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 3;
+            }
+        }
+        &.actived,
+        &.selected {
+            &::before {
+                border-top: 1px #02b1fd solid;
+                z-index: 4;
+            }
+            &::after {
+                border-bottom: 1px #02b1fd solid;
+                z-index: 4;
+            }
+            &>.layout-item-content {
+                &::before {
+                    border-right: 1px #02b1fd solid;
+                    z-index: 4;
+                }
+                &::after {
+                    border-right: 1px #02b1fd solid;
+                    z-index: 4;
+                }
+            }
+        }
+    }
+    .ui-item{
+            &.selected{
+                position: relative;
+                &::after{
+                    position: absolute;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    top:0;
+                    content: '';
+                    border:1px #3b6ff1 dashed;
+                }
+                
+            }
+    }
+}

@@ -36,12 +36,14 @@ import FlushSynct from './RactApi/react-dom/FlushSynct'
 import UnstableBatchedUpdates from './RactApi/react-dom/UnstableBatchedUpdates'
 // formily 测试
 import Formily from './Formily/Formily'
+// 单据设计器组件测试
+import BillDesigner from './BillDesigner/index'
 
 
 
 import {
     // AppstoreOutlined,
-    // BarChartOutlined,
+    BarChartOutlined,
     // CloudOutlined,
     // ShopOutlined,
     // TeamOutlined,
@@ -108,7 +110,7 @@ const items = [
     {
         key: 'Formily', label: 'Formily', icon: UploadOutlined
     },
-    // { key: '/4', label: '菜单1', icon: BarChartOutlined, },
+    { key: 'BillDesigner', label: 'BillDesigner测试', icon: BarChartOutlined, },
     // { key: '/5', label: '菜单1', icon: CloudOutlined, },
     // { key: '/6', label: '菜单1', icon: AppstoreOutlined, },
     // { key: '/7', label: '菜单1', icon: TeamOutlined, },
@@ -220,6 +222,8 @@ const App = () => {
                             <Route exact path='/unstableBatchedUpdates' element={<UnstableBatchedUpdates />}></Route>
                             {/* formily */}
                             <Route exact path='/Formily' element={<Formily />}></Route>
+                            {/*  ARPanel 组件测试 */}
+                            <Route exact path='/BillDesigner' element={<BillDesigner />}></Route>
                         </Routes>
                     </div>
                 </Content>

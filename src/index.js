@@ -5,14 +5,15 @@ import './index.css';
 import App from './views/Layout'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import { ConfigProvider } from "antd";
+import zhCN from 'antd/es/locale/zh_CN'; // 引入语言包
 const root = ReactDOM.createRoot(document.getElementById('root'));
 // 由于是使用脚手架创建项目，默认会开启严格模式，在严格模式下，React 的开发环境会刻意执行两次渲染，用于突出显示潜在问题。
 root.render(
   // <React.StrictMode>
-
-  <Router><App /></Router>
-
+  <ConfigProvider locale={zhCN}>
+    <Router><App /></Router>
+  </ConfigProvider>
   // </React.StrictMode>
 );
 
