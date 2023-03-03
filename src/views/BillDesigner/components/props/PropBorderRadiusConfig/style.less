@@ -1,0 +1,55 @@
+.lcd-border-radius-config {
+  display: flex;
+  min-width: 195px;
+  padding: 0 0 10px 0;
+  &-preview {
+      width: 90px;
+      min-width: 90px;
+      padding: 10px 6px;
+  }
+  .comstyle {
+      // background: #eff1f6;
+      width: 20px;
+      height: 20px;
+      float: left;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      span {
+          display: inline-block;
+          border: 1px solid #aaacaf;
+          width: 15px;
+          height: 15px;
+      }
+  }
+  .border-active{
+    background:#ddd;
+  }
+  &-borderTopLeftRadius{
+      margin: 3px 14px 3px 3px;
+  }
+  &-borderTopRightRadius{
+    margin: 3px 3px 3px 0px;
+  }
+  &-full{
+    margin: -8px 20px;
+    span{
+      border-radius:8px;
+    }
+  }
+  &-borderBottomLeftRadius {
+    margin: 3px 14px 3px 3px;
+  }
+  &-borderBottomRightRadius {
+    margin: 3px 3px 3px 0px;
+  }
+  &-set {
+      flex: 1;
+  }
+  &-color {
+      .ant-input-group-addon {
+          padding: 0 8px;
+      }
+  }
+}

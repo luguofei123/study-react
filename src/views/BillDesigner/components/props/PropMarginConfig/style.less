@@ -1,0 +1,100 @@
+.lcd-margin-config {
+    width: 211px;
+    border: 1px dashed #4e4e4e;
+    background-color: #FEDD9B;
+    text-align: center;
+    .top {
+        width: 100%;
+        height: 26px;
+        line-height: 26px;
+        position: relative;
+        &-span {
+            position: absolute;
+            left: 2px;
+            font-size: 12px;
+        }
+    }
+    .content {
+        width: 100%;
+        height: 78px;
+        flex-grow: 1;
+        display: flex;
+        &-left{
+            width: 28px;
+            line-height: 70px;
+            flex-shrink: 0;
+            .ant-input-number-sm {
+                width: 100%;
+            }
+        }
+        &-center {
+            flex-grow: 1;
+            background-color: #C4CF8B;
+            border: 1px dashed #4e4e4e;
+            &-top{
+                width: 100%;
+                height: 24px;
+                line-height: 24px;
+                position: relative;
+                &-span {
+                    position: absolute;
+                    left: 2px;
+                }
+            }
+            &-content {
+                width: 100%;
+                height: 26px;
+                line-height: 26px;
+                flex-grow: 1;
+                display: flex;
+                &-left {
+                    width: 28px;
+                    flex-shrink: 0;
+                }
+                &-center {
+                    flex-grow: 1;
+                    border: 1px dashed #4e4e4e;
+                    background-color: #8DB5C1;
+                }
+                &-right {
+                    width: 28px;
+                    flex-shrink: 0;
+                }
+            }
+            &-bottom {
+                width: 100%;
+                height: 24px;
+                line-height: 24px;
+            }
+        }
+        &-right {
+            width: 28px;
+            line-height: 70px;
+            flex-shrink: 0;
+            .ant-input-number-sm {
+                width: 100%;
+            }
+        }
+    }
+    .bottom {
+        width: 100%;
+        height: 26px;
+        line-height: 26px;
+    }
+    .ant-input-number {
+        width: 100%;
+    }
+}
+.overlaypopover {
+    width: 128px;
+    .ant-input-number {
+        width: 100%;
+    }
+    .ant-popover-title {
+        min-width: 128px;
+    }
+    .ant-popover-inner-content {
+        padding-top: 6px;
+        padding-bottom: 12px;
+    }
+}

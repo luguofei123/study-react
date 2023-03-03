@@ -1,0 +1,41 @@
+.refer-tab {
+    padding: 0 8px;
+    text-align: left;
+    &-col {
+        display: inline-block;
+        padding: 5px 5px 0px 5px;
+        width: 260px;
+    }
+    &-col.display-field {
+      width: 100px;
+      text-align: center;
+    }
+    &-col:last-child {
+      padding-left: 6px;
+    }
+    .button {
+        &:hover {
+            color: red;
+        }
+    }
+    .refer-fieldnames {
+        .ant-form-item {
+            margin-bottom: 8px;
+            /*             &-label {
+                margin-top: -3px;
+            } */
+            &-no-colon {
+                /* margin-top: -2px; */
+                &::after {
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}
+.contact-line {
+  display: inline-block;
+  width: 6px;
+  margin: 4px 4px;
+  border-bottom: 1px solid #cfcfcf;
+}

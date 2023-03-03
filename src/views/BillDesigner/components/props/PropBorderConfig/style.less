@@ -1,0 +1,54 @@
+.lcd-border-config {
+    display: flex;
+    min-width: 195px;
+    padding: 0 0 10px 0;
+    &-preview {
+        width: 90px;
+        min-width: 90px;
+        padding: 10px 6px;
+    }
+    .comstyle {
+       //  background: #eff1f6;
+        width: 20px;
+        height: 20px;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        span {
+            display: inline-block;
+            border: 1px dashed #aaacaf;
+            width: 15px;
+            height: 15px;
+        }
+    }
+    .border-active{
+      background:#ddd;
+    }
+    &-borderTop,
+    &-borderBottom {
+        margin: 3px 29px;
+    }
+    &-borderLeft,
+    &-borderFull,
+    &-borderRight {
+        margin: 3px;
+    }
+    &-set {
+        flex: 1;
+    }
+    &-color {
+      &.ant-input-affix-wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+        input {
+          border: none!important;
+          height: 26px!important;
+        }
+      }
+        .ant-input-group-addon {
+            padding: 0 8px;
+        }
+    }
+}

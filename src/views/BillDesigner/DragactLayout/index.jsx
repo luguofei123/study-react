@@ -1,14 +1,13 @@
 import React from 'react';
 import './index.less';
-// import './index.css';
 // import { Dragact } from 'dragact'
 import { Dragact } from './lib/dragact'
 // import { LayoutItem } from './LayoutItem.jsx'
 import LayoutItemMemo from './LayoutItemMemo'
 import u from '../../../utils/umbrella'
-// import ht from '../utils/HelperTools'
+import ht from '../utils/HelperTools'
 // import { showContextMenu } from '../utils/ContextMenu.jsx'
-const ht = {}
+// const ht = {}
 class DragactLayout extends React.PureComponent {
   constructor(props) {
     super(props)

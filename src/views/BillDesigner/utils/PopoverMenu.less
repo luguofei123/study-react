@@ -1,0 +1,44 @@
+@charset 'utf-8';
+.widget-panel {
+    &-item {
+        margin-bottom: 8px;
+        cursor: default;
+        &-title {
+            border-bottom: 1px #ddd dashed;
+            padding-bottom: 5px;
+        }
+    }
+    &-cmp {
+        display: inline-block;
+        min-width: 100px;
+        margin: 5px;
+        padding: 5px 0 5px 5px;
+        border-radius: 3px;
+        text-align: left;
+        background: #f9f9f9;
+        cursor: default;
+        .icon {
+            font-size: 24px;
+        }
+        &:hover {
+            background: #ee2223;
+            color: #fff;
+        }
+        .icon-del {
+            display: none;
+            float: right;
+            padding: 5px 5px 4px;
+            &:hover {
+                color: red;
+            }
+        }
+        &:hover {
+            .icon-del {
+                display: inline-block;
+            }
+        }
+    }
+    .ant-divider-horizontal{
+        margin:8px 0;
+    }
+}
