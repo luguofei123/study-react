@@ -17,7 +17,7 @@ class BillDesigner extends React.Component {
         const wrap = (Pwrap, content, wrapProps) => {
             return Pwrap ? <Pwrap {...wrapProps} >{content}</Pwrap> : content
         }
-        let draggabled = false
+        let draggabled = true
         const parser = (data) => {
             let visibledData = []
             visibledData = data

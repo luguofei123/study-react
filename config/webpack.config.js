@@ -72,7 +72,7 @@ const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
 const lessRegex = /\.less$/;
-const lessModuleRegex = /\.less$/;
+const lessModuleRegex = /node_modules/;
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
@@ -549,7 +549,7 @@ module.exports = function (webpackEnv) {
             //   test: lessRegex,
             //   exclude: lessModuleRegex,
             //   use: getStyleLoaders({
-            //     importLoaders: 1,
+            //     importLoaders: 3,
             //     modules: true,
             //     sourceMap: isEnvProduction && shouldUseSourceMap
             //   },
@@ -568,17 +568,29 @@ module.exports = function (webpackEnv) {
             //     "less-loader"
             //   )
             // },
-            // {
-            //   test: /\.less$/,
-            //   use: ["style-loader", "css-loader", {
-            //     loader: "less-loader", options: {
-            //       lessOptions: {
-            //         modifyVars: modifyVars,
-            //         javascriptEnabled: true,
-            //       },
-            //     },
-            //   }],
-            // },
+            // Less 解析配置
+            {
+              test: /\.less$/i,
+              exclude: lessModuleRegex,
+              use: [
+                {
+                  loader: "style-loader",
+                },
+                {
+                  loader: "css-loader",
+                },
+                {
+                  loader: "less-loader",
+                  options: {
+                    lessOptions: {
+                      strictMath: false,
+                      javascriptEnabled: true,
+                      math: "always",
+                    },
+                  },
+                },
+              ],
+            },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.

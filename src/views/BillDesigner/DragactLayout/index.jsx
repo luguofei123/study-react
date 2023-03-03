@@ -1,6 +1,6 @@
 import React from 'react';
-// import './index.less';
-import './index.css';
+import './index.less';
+// import './index.css';
 // import { Dragact } from 'dragact'
 import { Dragact } from './lib/dragact'
 // import { LayoutItem } from './LayoutItem.jsx'
