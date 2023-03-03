@@ -64,6 +64,33 @@ const dataUi = {
                     "level": 2,
                     "divCode": "2023030110005907822474058475580",
                     "GridW": 257
+                },
+                {
+                    "key": "20230301100059078224740584755801",
+                    "name": "ARInput",
+                    "props": {
+                        "show_label": 1
+                    },
+                    "nodeType": "formItem",
+                    "dataField": "deptPlace",
+                    "label": "出发地点",
+                    "hide": 0,
+                    "length": "100",
+                    "nullable": 0,
+                    "precise": "2",
+                    "tablename": "ar_bill_detail",
+                    "isParallel": 0,
+                    "GridX": 0,
+                    "GridY": 0,
+                    "h": 2,
+                    "w": 8,
+                    "locked": 0,
+                    "parentKey": "20230301100059080300991006903328",
+                    "parentName": "ARPanel",
+                    "refuri": "",
+                    "level": 2,
+                    "divCode": "20230301100059078224740584755801",
+                    "GridW": 257
                 }
             ],
             "expanded": true,

@@ -17,21 +17,13 @@ class BillDesigner extends React.Component {
         const wrap = (Pwrap, content, wrapProps) => {
             return Pwrap ? <Pwrap {...wrapProps} >{content}</Pwrap> : content
         }
+        let draggabled = false
         const parser = (data) => {
             let visibledData = []
             visibledData = data
             return visibledData.map(it => {
                 console.log(widgets)
                 const COMP = widgets[it.name]
-                // const layouts = (ht.showHideItem || !item.locked) ? item.children : item.children.filter(lt => lt.hide !== 1)
-
-
-                // const { key } = item
-                // //需要拖拽时
-                // if (draggabled) {
-                //   return wrap(<DragactLayout isRoot={item.name === 'root'} layout={layouts} rowHeight={item.rowHeight} defaultHeight={item.defaultHeight} flowX={item.flowX} cols={item.cols} width={item.GridW || 800} containerKey={item.key} key={item.key} extraStyle={itemExtraStyle} locked={item.locked} utools={ht} />, 
-                // TagName, { key, ...item.props, labelwidth: item.labelwidth, label: item.label, ref, domnode: item, utools: ht })
-                // }
                 let item = JSON.parse(JSON.stringify(it))
 
                 if (item.children && item.children.length) {
@@ -41,9 +33,15 @@ class BillDesigner extends React.Component {
                         const layouts = item.children
                         const { key } = item
                         let props = { key, ...item.props, labelwidth: item.labelwidth, label: item.label, domnode: item, }
-                        let content = <DragactLayout isRoot={item.name === 'root'} layout={layouts} rowHeight={item.rowHeight} defaultHeight={item.defaultHeight} flowX={item.flowX} cols={item.cols} width={item.GridW || 800} containerKey={item.key} key={item.key} locked={item.locked} />
-                        // let pwrap = <COMP className={`${item.locked ? it.name : `wx-${item.key}-${it.name}`}`} key={item.key} uidata={item}>{parser(item.children)}</COMP>
-                        return wrap(COMP, content, props)
+                        if (draggabled) {
+                            let content = <DragactLayout isRoot={item.name === 'root'} layout={layouts} rowHeight={item.rowHeight} defaultHeight={item.defaultHeight} flowX={item.flowX} cols={item.cols} width={item.GridW || 800} containerKey={item.key} key={item.key} locked={item.locked} />
+                            return wrap(COMP, content, props)
+                        } else {
+                            let content = parser(item.children)
+                            return wrap(COMP, content, props)
+
+                        }
+
                     }
 
 
