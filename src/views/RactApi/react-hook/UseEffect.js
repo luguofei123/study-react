@@ -37,7 +37,7 @@ function Child (pros) {
     // 模拟 class 组件的 componentDidUpdate
     // 第二个参数就是依赖的 state
     useEffect(() => {
-        console.log('number更新了')
+        console.log(number + 'number更新了')
     }, [number])
     // 模拟 class 组件的 componentDidMount
     useEffect(() => {

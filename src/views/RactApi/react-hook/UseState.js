@@ -24,6 +24,7 @@ function Child (pros) {
         setB('bbbbbb')
         console.log('child----number是否同步变化', number)
     }
+
     const subNumber = () => {
         // 异步更新同一个值2次，组件渲染一次，setNumber会执行2次
         // Promise.resolve().then(() => {

@@ -38,13 +38,15 @@ import UnstableBatchedUpdates from './RactApi/react-dom/UnstableBatchedUpdates'
 import Formily from './Formily/Formily'
 // 单据设计器组件测试
 import BillDesigner from './BillDesigner/index'
+// 测试react 插入组件方法
+import ReactSlot from './ReactSlot'
 
 
 
 import {
     // AppstoreOutlined,
     BarChartOutlined,
-    // CloudOutlined,
+    CloudOutlined,
     // ShopOutlined,
     // TeamOutlined,
     UploadOutlined,
@@ -111,7 +113,7 @@ const items = [
         key: 'Formily', label: 'Formily', icon: UploadOutlined
     },
     { key: 'BillDesigner', label: 'BillDesigner测试', icon: BarChartOutlined, },
-    // { key: '/5', label: '菜单1', icon: CloudOutlined, },
+    { key: '/ReactSlot', label: '测试ReactSlot', icon: CloudOutlined, },
     // { key: '/6', label: '菜单1', icon: AppstoreOutlined, },
     // { key: '/7', label: '菜单1', icon: TeamOutlined, },
     // { key: '/8', label: '菜单1', icon: ShopOutlined, }
@@ -224,6 +226,8 @@ const App = () => {
                             <Route exact path='/Formily' element={<Formily />}></Route>
                             {/*  ARPanel 组件测试 */}
                             <Route exact path='/BillDesigner' element={<BillDesigner />}></Route>
+                            {/* 测试其他 */}
+                            <Route exact path='/ReactSlot' element={<ReactSlot />}></Route>
                         </Routes>
                     </div>
                 </Content>
