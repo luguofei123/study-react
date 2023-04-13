@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
 import App from './views/Layout'
+// import 'default-passive-events'
+import '@tinper/next-ui/dist/tinper-next.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { ConfigProvider } from "antd";

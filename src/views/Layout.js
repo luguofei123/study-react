@@ -38,13 +38,16 @@ import UnstableBatchedUpdates from './RactApi/react-dom/UnstableBatchedUpdates'
 import Formily from './Formily/Formily'
 // 单据设计器组件测试
 import BillDesigner from './BillDesigner/index'
+// tinperUI测试
+import Table from './Tinper/Table/table';
+import TreeSelect from './Tinper/TreeSelect'
 // 测试react 插入组件方法
 import ReactSlot from './ReactSlot'
 
 
 
 import {
-    // AppstoreOutlined,
+    AppstoreOutlined,
     BarChartOutlined,
     CloudOutlined,
     // ShopOutlined,
@@ -114,7 +117,12 @@ const items = [
     },
     { key: 'BillDesigner', label: 'BillDesigner测试', icon: BarChartOutlined, },
     { key: '/ReactSlot', label: '测试ReactSlot', icon: CloudOutlined, },
-    // { key: '/6', label: '菜单1', icon: AppstoreOutlined, },
+    {
+        key: 'tinperUI', label: 'tinperUI', icon: AppstoreOutlined, children: [
+            { key: 'table', label: 'Table', icon: '' },
+            { key: 'treeSelect', label: 'TreeSelect', icon: '' },
+        ]
+    },
     // { key: '/7', label: '菜单1', icon: TeamOutlined, },
     // { key: '/8', label: '菜单1', icon: ShopOutlined, }
 ].map((item, index) => {
@@ -228,6 +236,9 @@ const App = () => {
                             <Route exact path='/BillDesigner' element={<BillDesigner />}></Route>
                             {/* 测试其他 */}
                             <Route exact path='/ReactSlot' element={<ReactSlot />}></Route>
+                            {/* tinper */}
+                            <Route exact path='/table' element={<Table />}></Route>
+                            <Route exact path='/treeSelect' element={<TreeSelect />}></Route>
                         </Routes>
                     </div>
                 </Content>
