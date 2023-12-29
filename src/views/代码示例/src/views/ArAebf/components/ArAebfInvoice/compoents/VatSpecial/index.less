@@ -1,0 +1,404 @@
+@main-color: #a98667;
+
+.vat-special-invoice {
+    width: 900px;
+    height: 520px;
+    position: relative;
+    margin: 0 auto;
+    color: @main-color;
+
+    .ant-input-number-input {
+        padding: 0 11px;
+    }
+
+    input {
+        border: none;
+        background: none;
+        box-shadow: none !important;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.65);
+    }
+
+    .bg {
+        width: 900px;
+        height: 548px;
+        background-color: #fffdfa;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // box-shadow: 0px 0px 10px #ccc;
+
+        .check-result {
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            overflow: visible !important;
+        }
+
+        .left,
+        .right {
+            float: left;
+            width: 40px;
+            height: 100%;
+
+            .circle {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 50px auto 0 auto;
+                background: white;
+                border-radius: 50%;
+                box-shadow: inset 0px 0px 8px #ccc;
+            }
+
+            .circle:first-child {
+                margin-top: 30px;
+            }
+        }
+
+        .center {
+            float: left;
+            width: calc(100% - 80px);
+            height: 100%;
+
+            .title-box {
+                margin-top: 10px;
+
+                span {
+                    display: block;
+                    color: #a98667;
+                    width: 340px;
+                    font-size: 16px;
+                    margin: 0 auto;
+                    text-align: center;
+                    letter-spacing: 5px;
+                }
+
+                // .title {}
+
+                .line {
+                    height: 1px;
+                    background: #a98667;
+                    margin-bottom: 2px;
+                }
+            }
+
+            .number-box {
+                height: 45px;
+                line-height: 45px;
+
+                input {
+                    border-bottom: 1px solid #c6c6c5;
+                    margin-left: 5px;
+                    border-radius: 0;
+                    box-shadow: none;
+                    font-size: 14px;
+                }
+
+                &>div {
+                    width: 25%;
+                    float: left;
+
+                    input {
+                        width: 50%;
+                    }
+
+                    &:nth-child(1) {
+                        width: 24%;
+
+                        input {
+                            width: 51%;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        text-align: center;
+
+                        input {
+                            width: 40%
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        text-align: left;
+
+                        input {
+                            width: 62%;
+                        }
+                    }
+
+                    &:last-child {
+                        overflow: hidden;
+                        width: 25%;
+                        float: right;
+
+                        label {
+                            display: block;
+                            float: left;
+                        }
+
+                        .ticket-input-box {
+                            width: calc(100% - 60px);
+                            display: contents;
+                        }
+
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .invoice-content {
+
+                .invoice-content-top,
+                .invoice-content-bottom {
+                    height: 120px;
+
+                    input {
+                        border-bottom: 1px solid #c6c6c5;
+                        margin-left: 5px;
+                        border-radius: 0;
+                        font-size: 14px;
+                    }
+                }
+
+                .invoice-content-left,
+                .invoice-content-right {
+                    width: 100%;
+                    height: 100%;
+
+                    .content-detail-item {
+                        width: 50%;
+                        float: left;
+                    }
+
+                    .invoice-content-title {
+                        float: left;
+                        width: 40px;
+                        border: 1px solid @main-color;
+                        height: 100%;
+                        padding-left: 13px;
+                        // padding-top: 26px;
+                        line-height: 40px;
+                    }
+
+                    .invoice-content-detail {
+                        float: left;
+                        width: calc(100% - 40px);
+                        border: 1px solid @main-color;
+                        height: 100%;
+                        border-left: none;
+                        padding-top: 5px;
+
+                        div {
+                            height: 32px;
+                            margin-bottom: 6px;
+
+                            label {
+                                width: 102px;
+                                display: inline-block;
+                                text-align: justify;
+                                text-align-last: justify;
+                                padding: 0 5px;
+                            }
+
+                            input {
+                                width: calc(100% - 112px);
+                            }
+                        }
+                    }
+                }
+
+                .invoice-content-middle {
+                    position: relative;
+
+                    .scroll-table {
+                        position: relative;
+                        height: 140.5px;
+
+                        .content-table-box {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            overflow-y: hidden;
+                            height: 140.5px;
+                        }
+
+                        // .content-table {}
+
+                        .header-table {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+
+                            th {
+                                background: #fffdfa;
+                            }
+                        }
+                    }
+
+                    .bottom-table {
+                        margin-top: -1px
+                    }
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        border: none !important;
+
+                        input {
+                            border: none !important;
+                            background: transparent !important;
+                            font-size: 14px;
+                        }
+
+                        .text-right.wui-input-number {
+                            border: none !important;
+                            background: transparent !important;
+
+                            input {
+                                text-align: right;
+                            }
+                        }
+
+                        .wui-input-number {
+                            border: none !important;
+                            background: transparent !important;
+                        }
+
+                        .ant-input-number-input {
+                            width: 96%;
+                        }
+
+                        .total-money .ant-input-number-input {
+                            width: 98%;
+                        }
+
+                        .lower-case .ant-input-number-input {
+                            width: 97%;
+                        }
+
+                        tr {
+
+                            td,
+                            th {
+                                text-align: center;
+                                font-weight: normal;
+                                border-color: @main-color !important;
+                            }
+
+                            th {
+                                border-top: none !important;
+                            }
+
+                            td:first-child {
+                                text-align: left;
+                                padding-left: 5px;
+                            }
+                        }
+
+                        .capital {
+                            width: 215px;
+                        }
+
+                        .lower-case {
+                            width: 118px;
+                            float: right;
+                        }
+
+                        .ampuntTax-box {
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .remark {
+                            width: 700px;
+                            margin-left: 40px;
+                        }
+                    }
+                }
+
+                .invoice-content-remark {
+                    height: 36px;
+                    border: 1px solid @main-color !important;
+                    border-top: none !important;
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        border: none !important;
+
+                        input {
+                            border: none !important;
+                            background: transparent !important;
+                            font-size: 14px;
+                        }
+
+                        .ant-input-number {
+                            border: none !important;
+                            background: transparent !important;
+                        }
+
+                        .ant-input-number-input {
+                            width: 96%;
+                        }
+
+                        .total-money .ant-input-number-input {
+                            width: 98%;
+                        }
+
+                        .lower-case .ant-input-number-input {
+                            width: 97%;
+                        }
+
+                        tr {
+
+                            td,
+                            th {
+                                text-align: center;
+                                font-weight: normal;
+                                border: none !important;
+                                // border-color: @main-color!important;
+                            }
+
+                            th {
+                                border-top: none !important;
+                            }
+
+                            td:first-child {
+                                text-align: left;
+                                padding-left: 5px;
+                            }
+                        }
+
+                        .capital {
+                            width: 215px;
+                        }
+
+                        .lower-case {
+                            width: 118px;
+                            float: right;
+                        }
+
+                        .ampuntTax-box {
+                            display: flex;
+                            align-items: center;
+                        }
+
+                        .remark {
+                            width: 700px;
+                            margin-left: 40px;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+    .wui-picker {
+        background: transparent;
+    }
+}

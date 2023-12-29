@@ -1,0 +1,124 @@
+.wui-modal-dialog.aebf-dialog {
+    .wui-modal-footer {
+        .aebf-total-money {
+            float: left;
+        }
+
+        .aebf-foot-opration {
+            float: right;
+        }
+    }
+
+    // 费用类型确认
+    .aebf-expense-confirm {
+        height: 100%;
+        overflow: auto;
+
+        .aebf-expense-wrapper {
+            height: 100%;
+
+            .aebf-confirm-top {
+                display: flex;
+                align-items: baseline;
+                justify-content: flex-start;
+
+                .aebf-steps {
+                    margin-right: 100px;
+                    display: inline-flex;
+                    align-items: baseline;
+
+                    .unactive {
+                        color: #b8b8b8;
+
+                        .wui-icon.uf.uf-correct {
+                            display: inline-block;
+                            height: 18px;
+                            width: 18px;
+                            border-radius: 9px;
+                            background: #00b97d;
+                            color: white;
+                            margin: 0 5px 0 0;
+                            position: relative;
+                            top: 4px;
+
+                            &:before {
+                                position: absolute;
+                                left: 1px;
+                                top: -1px;
+                            }
+                        }
+                    }
+
+                    .active {
+                        .circle {
+                            display: inline-block;
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 9px;
+                            border: 6px solid #468ef0;
+                            margin: 0 5px;
+                            position: relative;
+                            top: 4px;
+                        }
+                    }
+
+                    .long {
+                        display: inline-block;
+                        width: 100px;
+                        border-bottom: 1px solid #ccc;
+                        margin: 0 5px;
+                        position: relative;
+                        top: -5px;
+                    }
+                }
+
+                .aebf-tips {
+                    display: flex;
+                    height: 50px;
+                    line-height: 50px;
+                    background: #fff7e6;
+                    border: 2px solid #ffc348;
+                    padding: 0 20px;
+                    border-radius: 8px;
+
+                    .wui-icon.uf.uf-exc-c-o {
+                        color: #ffc348;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+
+            .aebf-total-money {
+                position: absolute;
+                bottom: 0px;
+            }
+
+            .aebf-expense-confirm-nosch {
+                margin-top: 10px;
+            }
+
+            .aebf-expense-confirm-sch {
+                .sch-table-box {
+                    margin-top: 10px;
+
+                    .confirm-sch-title {
+                        margin-bottom: 5px;
+                        font-size: 12px;
+                        font-weight: 500;
+
+                        .time {
+                            margin: 0 8px;
+                        }
+
+                        .businessMan {
+                            font-weight: normal;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

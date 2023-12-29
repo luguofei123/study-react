@@ -1,0 +1,275 @@
+@main-color: #a98667;
+
+.no-tax-income {
+    width: 860px;
+    height: 518px;
+    position: relative;
+    margin: 0 auto;
+    color: @main-color;
+
+    span {
+        color: rgba(0, 0, 0, .65)
+    }
+
+    .ant-input-number-input {
+        padding: 0 4px;
+    }
+
+    input {
+        border: none;
+        background: none;
+        box-shadow: none !important;
+    }
+
+    .bg {
+        width: 860px;
+        height: 510px;
+        background-color: #fffdfa;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 10px #ccc;
+
+        .check-result {
+            position: absolute;
+            right: 10px;
+            top: 2px;
+            overflow: visible !important;
+        }
+
+        .left,
+        .right {
+            float: left;
+            width: 40px;
+            height: 100%;
+
+            .circle {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 50px auto 0 auto;
+                background: white;
+                border-radius: 50%;
+                box-shadow: inset 0px 0px 8px #ccc;
+            }
+
+            .circle:first-child {
+                margin-top: 30px;
+            }
+        }
+
+        .center {
+            float: left;
+            width: calc(100% - 80px);
+            height: 100%;
+
+            .title-box {
+                margin-top: 10px;
+
+                span {
+                    display: block;
+                    color: #a98667;
+                    width: 340px;
+                    font-size: 16px;
+                    margin: 0 auto;
+                    text-align: center;
+                    letter-spacing: 5px;
+                }
+
+                // .title {}
+
+                .line {
+                    height: 1px;
+                    background: #a98667;
+                    margin-bottom: 2px;
+                }
+            }
+
+            .number-box {
+                input {
+                    border-bottom: 1px solid #c6c6c5;
+                    margin-left: 5px;
+                    border-radius: 0;
+                    box-shadow: none;
+                }
+
+                //发票头部样式
+                width: 100%;
+
+                div {
+                    width: 33%;
+                    display: inline-block;
+                    height: 35px;
+
+                    input {
+                        width: 50%;
+                    }
+                }
+            }
+
+            .invoice-content {
+                .invoice-content-top {
+                    height: 109px;
+
+                    .invoice-content-left,
+                    .invoice-content-right {
+                        width: 50%;
+                        float: left;
+                        height: 100%;
+
+                        .invoice-content-title {
+                            float: left;
+                            width: 40px;
+                            border: 1px solid @main-color;
+                            height: 100%;
+                            padding-left: 13px;
+                            padding-top: 20px;
+                            line-height: 25px;
+                        }
+
+                        .invoice-content-detail {
+                            float: left;
+                            width: calc(100% - 40px);
+                            border: 1px solid @main-color;
+                            height: 100%;
+                            border-left: none;
+
+                            div {
+                                height: 36px;
+                                border-bottom: 1px solid @main-color ;
+
+                                label {
+                                    width: 102px;
+                                    display: inline-block;
+                                    text-align: justify;
+                                    text-align-last: justify;
+                                    border-right: 1px solid @main-color;
+                                    height: 100%;
+                                    padding: 7px 5px;
+                                }
+
+                                input {
+                                    width: calc(100% - 112px);
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+
+                    .invoice-content-right .invoice-content-title {
+                        border-left: none;
+                    }
+
+                    input {
+                        border-bottom: 1px solid #c6c6c5;
+                        margin-left: 5px;
+                        border-radius: 0;
+                    }
+                }
+
+                .invoice-content-middle {
+                    position: relative;
+
+                    .moneyContent {
+                        span {
+                            margin: 0 30px 0 5px;
+                        }
+                    }
+
+                    .scroll-table {
+                        position: relative;
+                        height: 140.5px;
+
+                        .content-table-box {
+                            position: absolute;
+                            left: 0;
+                            top: 0;
+                            overflow-y: hidden;
+                            height: 140.5px;
+                        }
+
+                        // .content-table {}
+
+                        .header-table {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+
+                            th {
+                                background: #fffdfa;
+                            }
+                        }
+                    }
+
+                    .bottom-table {
+                        margin-top: -1px;
+
+                        input {
+                            width: 50%;
+                        }
+                    }
+
+                    table {
+                        width: 100%;
+                        border-collapse: collapse;
+                        border: none !important;
+
+                        input {
+                            border: none !important;
+                        }
+
+                        .ant-input-number {
+                            border-bottom: none !important;
+                        }
+
+                        .ant-input-number-input {
+                            width: 96%;
+                        }
+
+                        .total-money .ant-input-number-input {
+                            width: 98%;
+                        }
+
+                        .lower-case .ant-input-number-input {
+                            width: 97%;
+                        }
+
+                        tr {
+
+                            td,
+                            th {
+                                text-align: center;
+                                font-weight: normal;
+                                border-color: @main-color !important;
+                            }
+
+                            th {
+                                border-top: none !important;
+                            }
+
+                            td:first-child {
+                                text-align: left;
+                                padding-left: 5px;
+                            }
+                        }
+
+                        .capital {
+                            width: 215px;
+                        }
+
+                        .lower-case {
+                            width: 118px;
+                            float: right;
+                        }
+
+                        .ampuntTax-box {
+                            display: flex;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,193 @@
+.train-ticket {
+    width: 500px;
+    height: 300px;
+    background: #EDF9FF;
+    box-shadow: 0px 2px 6px 1px rgba(204, 204, 204, 0.5);
+    border-radius: 10px;
+    margin: 0 auto;
+    position: relative;
+    padding-top: 10px;
+
+    .check-result {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        overflow: visible !important;
+    }
+
+    input {
+        border-radius: 0;
+        border: none;
+        background: none;
+        border-bottom: 1px solid #BBBBBB;
+        box-shadow: none !important;
+        text-align: center;
+        font-size: 14px;
+        color: rgba(0, 0, 0, .65);
+    }
+
+    .ticket-code {
+        width: 130px;
+        color: #E9250E;
+    }
+
+    .leftTitle {
+        color: #E9250E;
+        line-height: 20px;
+        margin-left: 20px;
+    }
+
+    .trickInfo {
+        color: #333333;
+
+        &>div {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .top {
+            position: relative;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+
+            input:first-child,
+            input:last-child {
+                width: 160px;
+            }
+
+            input:last-child {
+                float: right;
+            }
+
+            .arrowInput {
+                position: relative;
+
+                input {
+                    width: 100px;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -80%);
+                }
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    bottom: 0px;
+                    right: 1px;
+                    width: 20px;
+                    height: 13px;
+                    border-top: 1px solid #bbbbbb;
+                    transform: rotate(15deg);
+                }
+            }
+        }
+
+        .middle {
+            overflow: hidden;
+            margin-top: 25px;
+
+            .time-box {
+                overflow: hidden;
+                border-bottom: 1px solid #bbbbbb;
+                display: flex;
+                align-items: center;
+
+                &>div {
+                    width: 195px;
+                }
+
+                input {
+                    border: none;
+                    text-align: left;
+                    font-size: 14px;
+                }
+
+                float: left;
+
+                .wui-picker {
+                    background: transparent;
+                    border: none;
+
+                    .wui-picker-clear {
+                        &:hover {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+
+            &>input:last-child {
+                float: right;
+                width: 180px;
+            }
+        }
+
+        .bottom {
+            overflow: hidden;
+            margin-top: 25px;
+
+            .money {
+                width: 160px;
+                float: left;
+                border-bottom: 1px solid #bbbbbb;
+                padding-left: 30px;
+
+                input {
+                    width: 100px;
+                    border: none;
+                    // padding: 0;
+                    font-size: 14px;
+                }
+
+                .wui-input-number {
+                    background: transparent;
+                    border: none;
+
+                    input {
+                        text-align: right;
+                        float: right;
+                    }
+                }
+            }
+
+            &>input {
+                width: 160px;
+
+                &:last-child {
+                    float: right;
+                }
+            }
+        }
+
+        .hint {
+            margin-top: 10px;
+        }
+    }
+
+    .bottomBg {
+        width: 500px !important;
+        height: 40px;
+        background: #A3DCF6;
+        border-radius: 0px 0px 10px 10px;
+        line-height: 40px;
+        padding: 0 16px;
+        position: absolute;
+        bottom: 0;
+
+        input {
+            padding: 10px;
+
+            &:first-child {
+                width: 180px;
+                text-align: left;
+            }
+
+            &:last-child {
+                width: 80px;
+                float: right;
+                text-align: right;
+            }
+        }
+    }
+}

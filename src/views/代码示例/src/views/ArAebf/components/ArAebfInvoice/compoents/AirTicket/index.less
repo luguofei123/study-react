@@ -1,0 +1,275 @@
+@main-color: #3e3e3e;
+@border-color: #152E3D;
+
+.air-ticket {
+    width: 860px;
+    height: 460px;
+    position: relative;
+    margin: 0 auto;
+    color: @main-color;
+
+    .wui-input {
+        height: 32px;
+    }
+
+    input {
+        border: none;
+        background: none;
+        padding-left: 0 !important;
+        border-radius: 0;
+        box-shadow: none !important;
+        font-weight: bold;
+        font-size: 14px;
+        color: rgba(0, 0, 0, .65);
+    }
+
+    .money-input {
+        .ant-input-number {
+            border: none !important;
+            font-size: 14px;
+        }
+
+        .wui-input-number {
+            border: none !important;
+            font-size: 14px;
+            background: transparent;
+
+
+            input {
+                background: transparent;
+                text-align: right;
+            }
+        }
+
+        .disabled-con.wui-input-number {
+            input {
+                color: rgba(0, 0, 0, .65);
+            }
+
+        }
+    }
+
+    .bg {
+        width: 860px;
+        height: 460px;
+        background-color: #f5fcff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 10px #ccc;
+
+        .check-result {
+            position: absolute;
+            right: 40px;
+            top: 15px;
+            overflow: visible !important;
+        }
+
+        .left,
+        .right {
+            float: left;
+            width: 40px;
+            height: 100%;
+
+            .circle {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 50px auto 0 auto;
+                background: white;
+                border-radius: 50%;
+                box-shadow: inset 0px 0px 8px #ccc;
+            }
+
+            .circle:first-child {
+                margin-top: 40px;
+            }
+        }
+
+        .center {
+            float: left;
+            width: calc(100% - 80px);
+            height: 100%;
+
+            .title {
+                border: 1px solid @border-color;
+                line-height: 45px;
+                text-align: center;
+                margin-top: 20px;
+                font-size: 16px;
+                letter-spacing: 5px;
+            }
+
+            table {
+                width: 100%;
+                border-top: none;
+                border-color: @border-color !important;
+                font-size: 14px;
+                border-collapse: collapse;
+
+                .detail-input {
+                    input {
+                        text-align: center;
+                        font-size: 14px;
+                    }
+                }
+
+                .passenger-Info-input {
+                    border-radius: 0;
+                    border-bottom: 1px solid #ccc;
+                    margin-bottom: 5px;
+                    width: calc(100% - 10px);
+                }
+
+                th,
+                td {
+                    border-color: @border-color !important;
+                    padding-left: 5px;
+                }
+
+                tr:first-child {
+                    td {
+                        border-top: none;
+                    }
+                }
+
+                th {
+                    font-weight: normal;
+                }
+
+                .nvzhips-td {
+                    label {
+                        display: inline-block;
+                        width: 65px;
+                    }
+
+                    input {
+                        width: calc(100% - 65px);
+                        font-size: 14px;
+                    }
+                }
+
+                .detail-table-head {
+                    text-align: center;
+                    padding-left: 0;
+                }
+
+                .font-size-small {
+                    font-size: 14px;
+                }
+
+                .font-name-en {
+                    font-size: 12px;
+                }
+
+                .font-name-en-price {
+                    overflow: hidden;
+                    position: relative;
+                    height: 20px;
+
+                    .position-content {
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        width: 170px;
+
+                        span {
+                            position: absolute;
+                            transform: scale(0.8);
+                            float: left;
+                        }
+                    }
+                }
+
+                .yellow-bg {
+                    background: #fefada;
+                }
+
+                .number-td {
+                    .number-name {
+                        float: left;
+                        margin-right: 5px;
+                    }
+
+                    input {
+                        float: left;
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            .name-table {
+                td {
+                    border-right: 1px solid @border-color;
+                    border-left: 1px solid @border-color;
+                }
+            }
+
+            .wui-input-number-out {
+                display: flex;
+                align-items: center;
+            }
+
+        }
+    }
+
+    .ant-time-picker {
+        width: 100% !important;
+    }
+
+    .wui-picker {
+        border: none;
+        background: transparent;
+        padding: 0;
+
+        input {
+            text-align: left !important;
+            font-size: 14px;
+        }
+
+        .wui-icon.uf.uf-calendar {
+            // color: #000;
+            color: rgba(0, 0, 0, .65);
+        }
+    }
+
+    .wui-time-picker {
+        border: none;
+        background: transparent;
+        // padding: 0;
+        align-items: center;
+        display: flex;
+
+        input {
+            font-size: 14px;
+            background: transparent;
+        }
+
+        .uf.uf-time-c-o {
+            // color: #000;
+            color: rgba(0, 0, 0, .65);
+        }
+    }
+
+    .ant-calendar-picker {
+
+        .ant-calendar-picker-clear,
+        .ant-calendar-picker-icon {
+            right: 6px;
+        }
+
+        input {
+            text-align: left !important;
+            font-size: 14px;
+        }
+    }
+
+    .margin-input {
+        margin-top: 4px;
+    }
+
+    .ant-time-picker-input[disabled] {
+        background-color: transparent;
+    }
+}

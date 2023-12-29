@@ -151,7 +151,7 @@ class UseState extends React.Component {
                 <span style={{ margin: '10px' }}>{number}</span>
                 <Button onClick={this.subNumber.bind(this)} >异步减少</Button>
                 <span style={{ margin: '10px 10px 10px 50px' }}>{countData.count}</span>
-                <Button onClick={this.changeObj.bind(this)}>增加（useState会进行深比较）</Button>
+                <Button onClick={this.changeObj.bind(this)}>增加（setState会进行深比较）</Button>
             </div>
             <Highlight className='javascript'>
                 {`  

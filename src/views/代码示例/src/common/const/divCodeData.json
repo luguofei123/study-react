@@ -1,0 +1,332 @@
+{
+  "AAR_EXP": [
+    {
+      "name": "关联单据",
+      "type": "RELATION",
+      "entyCode": "AARBillRelation",
+      "keys": [
+        "applyList",
+        "loanList",
+        "relationList",
+        "itemApplyList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "基本信息",
+      "type": "BASE",
+      "entyCode": "AARBill",
+      "keys": [
+        "arBill"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "费用明细",
+      "type": "DETAIL",
+      "entyCode": "AARBillDetail",
+      "keys": [
+        "expenseList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "费用明细多人",
+      "type": "DETAILMUTI",
+      "entyCode": "AARBillExpDetail",
+      "keys": [],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "附件信息",
+      "type": "FILE",
+      "entyCode": "AARBillAttachment",
+      "keys": [
+        "filesList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "指标信息",
+      "type": "BUDGET",
+      "entyCode": "AARBillBudget",
+      "keys": [
+        "balanceList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "结算信息",
+      "type": "SETTLEMENT",
+      "entyCode": "AARBillSettlement",
+      "keys": [
+        "settlementList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "人员信息",
+      "type": "EMP",
+      "entyCode": "AARBillPerson",
+      "keys": [
+        "empList",
+        "personList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "行程信息",
+      "type": "TRIP",
+      "entyCode": "AARBillTrip",
+      "keys": [],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "支付明细",
+      "type": "PAY",
+      "entyCode": "AEPAYPayinfoDetail",
+      "keys": [],
+      "key": "",
+      "data": []
+    }
+  ],
+  "AAR_LOAN": [
+    {
+      "name": "关联单据",
+      "type": "RELATION",
+      "entyCode": "AARLrBillRelation",
+      "keys": [
+        "applyList",
+        "loanList",
+        "relationList",
+        "itemApplyList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "基本信息",
+      "type": "BASE",
+      "entyCode": "AARLrBill",
+      "keys": [
+        "arBill"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "费用明细",
+      "type": "DETAIL",
+      "entyCode": "AARLrBillDetail",
+      "keys": [
+        "expenseList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "附件信息",
+      "type": "FILE",
+      "entyCode": "AARLrBillAttachment",
+      "keys": [
+        "filesList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "指标信息",
+      "type": "BUDGET",
+      "entyCode": "AARLrBillBudget",
+      "keys": [
+        "balanceList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "结算信息",
+      "type": "SETTLEMENT",
+      "entyCode": "AARLrBillSettlement",
+      "keys": [
+        "settlementList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "支付明细",
+      "type": "PAY",
+      "entyCode": "AEPAYPayinfoDetail",
+      "keys": [],
+      "key": "",
+      "data": []
+    }
+  ],
+  "AAR_REPAY": [
+    {
+      "name": "关联单据",
+      "type": "RELATION",
+      "entyCode": "AARLrBillRelation",
+      "keys": [
+        "applyList",
+        "loanList",
+        "relationList",
+        "itemApplyList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "基本信息",
+      "type": "BASE",
+      "entyCode": "AARLrBill",
+      "keys": [
+        "arBill"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "费用明细",
+      "type": "DETAIL",
+      "entyCode": "AARLrBillDetail",
+      "keys": [
+        "expenseList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "附件信息",
+      "type": "FILE",
+      "entyCode": "AARLrBillAttachment",
+      "keys": [
+        "filesList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "指标信息",
+      "type": "BUDGET",
+      "entyCode": "AARLrBillBudget",
+      "keys": [
+        "balanceList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "结算信息",
+      "type": "SETTLEMENT",
+      "entyCode": "AARLrBillSettlement",
+      "keys": [
+        "settlementList"
+      ],
+      "key": "",
+      "data": []
+    }
+  ],
+  "ADK_APPLY": [
+    {
+      "name": "关联单据",
+      "type": "RELATION",
+      "entyCode": "ADKBillRelation",
+      "keys": [
+        "applyList",
+        "loanList",
+        "relationList",
+        "itemApplyList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "基本信息",
+      "type": "BASE",
+      "entyCode": "ADKBill",
+      "keys": [
+        "arBill"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "费用明细",
+      "type": "DETAIL",
+      "entyCode": "ADKBillDetail",
+      "keys": [
+        "expenseList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "费用明细多人",
+      "type": "DETAILMUTI",
+      "entyCode": "ADKBillExpDetail",
+      "keys": [],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "附件信息",
+      "type": "FILE",
+      "entyCode": "ADKBillAttachment",
+      "keys": [
+        "filesList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "指标信息",
+      "type": "BUDGET",
+      "entyCode": "ADKBillBudget",
+      "keys": [
+        "balanceList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "结算信息",
+      "type": "SETTLEMENT",
+      "entyCode": "arBillSettlement",
+      "keys": [
+        "settlementList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "人员信息",
+      "type": "EMP",
+      "entyCode": "ADKBillPerson",
+      "keys": [
+        "empList",
+        "personList"
+      ],
+      "key": "",
+      "data": []
+    },
+    {
+      "name": "行程信息",
+      "type": "TRIP",
+      "entyCode": "ADKBillTrip",
+      "keys": [],
+      "key": "",
+      "data": []
+    }
+  ]
+}

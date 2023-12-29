@@ -1,0 +1,88 @@
+.quota-invoice {
+    width: 500px;
+    height: 320px;
+    background: #FFFDFA;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px 1px rgba(204, 204, 204, 0.5);
+    color: #9A673A;
+    position: relative;
+
+    input {
+        border-radius: 0;
+        border: none;
+        background: none;
+        border-bottom: 1px solid #BBBBBB;
+        box-shadow: none !important;
+        text-align: left;
+        font-size: 14px;
+        color: rgba(0, 0, 0, .65);
+    }
+
+
+    .check-result {
+        position: absolute;
+        right: 25px;
+        top: 15px;
+        overflow: visible !important;
+    }
+
+    h1 {
+        color: #9A673A;
+        padding-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: 16px;
+    }
+
+    &>div.item {
+        width: 82%;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-bottom: 20px;
+        display: flex;
+
+        label {
+            display: block;
+            width: 95px;
+            text-align: right;
+            margin-right: 10px;
+            float: left;
+        }
+
+
+        .input-box.ticket-input-box {
+            width: 100%;
+
+            .wui-picker {
+                border: none;
+                font-size: 14px;
+                background: transparent;
+                border-bottom: 1px solid #BBBBBB;
+                border-radius: 0;
+
+                input {
+                    border: none;
+                    background: transparent;
+                    text-align: left;
+                }
+            }
+
+            .wui-input-number {
+                border: none;
+                font-size: 14px;
+                background: transparent;
+                border-bottom: 1px solid #BBBBBB;
+                border-radius: 0;
+
+
+
+                input {
+                    background: transparent;
+                    text-align: right;
+                }
+            }
+        }
+
+    }
+}

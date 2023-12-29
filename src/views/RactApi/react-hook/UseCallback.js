@@ -1,3 +1,12 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: lugfa
+ * @Date: 2023-02-24 16:16:21
+ * @LastEditors: lugfa
+ * @LastEditTime: 2023-08-17 11:26:52
+ * @FilePath: /study-react/src/views/RactApi/react-hook/UseCallback.js
+ */
 import React, { useState, useCallback, memo } from "react";
 import Highlight from 'react-highlight'
 import { Button } from 'antd';
@@ -26,12 +35,12 @@ function Child (pros) {
     // memo进行浅比较，func1被缓存了，返回的函数引用是相同的，所以比较的时候是相同的，所以不需要渲染Son组件
     const func1 = useCallback(() => {
         console.log('11111 count---number')
-        // setCount(number + 1)
-    }, [])
+        setCount(number + 1)
+    }, [number])
     // }, [count, number])
     //  memo进行浅比较  因为父组件重新渲染，所以func2重新生成，所以比较的时候是不相同的，所以就重新渲染Son组件
     const func2 = () => {
-        console.log(22222222)
+        console.log('2222 count---number')
         setCount(count + 1)
 
     }
@@ -45,7 +54,7 @@ function Child (pros) {
         <Son func={func2} title={'普通点击'} />
     </div>)
 }
-// memo 函数组件使用例子  `true`则不更新，为`false`更新
+// memo 函数组件使用例子  `true`则不更新，为`false`更新 ，省略的话默认浅比较
 const Son = memo((props) => {
     console.log(props.title)
     return <Button onClick={props.func}>{props.title}</Button>
@@ -83,6 +92,18 @@ class UseCallback extends React.Component {
   当依赖dep 发生变化的时候才执行callback,callback才会重新执行； dep没有发生变化，组件将直接使用缓存的结果；
   `}</Highlight>
             <Child />
+            <Highlight className='javascript'>
+                {`  
+  useCallback 用法总结
+
+  1 useCallback 这个组件必须配合memo使用
+
+  2 useCallback 绝不是用的越多越好，缓存这项技术本身也需要成本。
+  
+  3 useCallback 的使用场景之一是:避免子组件不必要的reRender。
+
+            
+            `}</Highlight>
             <div>
                 <h3>class 父类组件</h3>
                 <Button onClick={this.addNumber.bind(this)} >增加</Button>

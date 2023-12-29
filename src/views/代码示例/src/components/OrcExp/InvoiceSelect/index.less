@@ -1,0 +1,158 @@
+.invoce-select-wrapper {
+    height: 100%;
+
+    .top-title {
+        display: flex;
+        width: 100%;
+        height: 36px;
+        justify-content: flex-start;
+        border-bottom: 1px solid #ccc;
+        align-items: center;
+        font-size: 14px;
+
+        span.nomarl {
+            height: 36px;
+            line-height: 36px;
+            margin-right: 50px;
+            cursor: pointer;
+            padding: 0 10px;
+        }
+
+        span.active {
+            border-bottom: 2px solid #06f;
+            color: #06f;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    }
+
+    .content {
+        height: calc(100% - 25px);
+        display: flex;
+
+        .left {
+            height: calc(100% - 40px);
+            width: 220px;
+            margin-top: 10px;
+
+            .treeBox {
+                height: calc(100% - 12px);
+                width: 220px;
+                margin-top: 10px;
+                border: 1px solid #bbbbbb;
+                overflow: auto;
+
+                .treeList {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+
+                    .parent {
+                        cursor: pointer;
+                        height: 24px;
+                        line-height: 24px;
+                        display: inline-block;
+
+                        span {
+                            padding: 2px 5px;
+
+                            &:hover {
+                                background-color: #bbbbbb;
+                                border-radius: 3px;
+                            }
+
+                        }
+
+                        span.active {
+                            color: white;
+                            border-radius: 3px;
+                            background-color: rgb(0, 102, 255);
+                        }
+                    }
+
+                    .children {
+                        height: 24px;
+                        cursor: pointer;
+                        margin-left: 40px;
+                        line-height: 24px;
+                        margin-top: 5px;
+                        display: inline-block;
+
+                        span {
+                            padding: 2px 5px;
+
+                            &:hover {
+                                background-color: #bbbbbb;
+                                border-radius: 3px;
+                            }
+                        }
+
+                        span.active {
+                            color: white;
+                            border-radius: 3px;
+                            background-color: rgb(0, 102, 255);
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .right {
+            flex: 1;
+            height: 100%;
+            padding: 10px 0 10px 10px;
+            width: calc(100% - 220px);
+
+            .search {
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 10px;
+                align-items: baseline;
+
+                .aebf-steps {
+                    margin-right: 100px;
+                    display: inline-flex;
+                    align-items: baseline;
+
+                    .unactive {
+                        color: #b8b8b8;
+
+                        .circle {
+                            display: inline-block;
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 9px;
+                            border: 6px solid #468ef0;
+                            margin: 0 5px;
+                            position: relative;
+                            top: 4px;
+                        }
+                    }
+
+                    .active {
+                        .circle {
+                            display: inline-block;
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 9px;
+                            border: 6px solid #00b97d;
+                            margin: 0 5px;
+                            position: relative;
+                            top: 4px;
+                        }
+                    }
+
+                    .long {
+                        display: inline-block;
+                        width: 100px;
+                        border-bottom: 1px solid #ccc;
+                        margin: 0 5px;
+                        position: relative;
+                        top: -5px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+  "COMMON": [
+    {
+      "code": "customSaveAndsubmit",
+      "label": "自定义保存并提交"
+    },
+    {
+      "code": "customDetele",
+      "label": "自定义删除"
+    },
+    {
+      "code": "customCancel",
+      "label": "自定义取消"
+    },
+    {
+      "code": "customCollected",
+      "label": "自定义确认收单"
+    },
+    {
+      "code": "customUncollected",
+      "label": "自定义取消收单"
+    },
+    {
+      "code": "customWorkFlowStart",
+      "label": "自定义提交"
+    },
+    {
+      "code": "customTableExport",
+      "label": "表格导出"
+    },
+    {
+      "code": "customTableImport",
+      "label": "表格导入"
+    },
+    {
+      "code": "generatePay",
+      "label": "生成支付单"
+    },
+    {
+      "code": "customRowOrc",
+      "label": "自定义行上智能识别"
+    },
+    {
+      "code": "customRowViewInvoices",
+      "label": "自定义行上联查发票"
+    },
+    {
+      "code": "budgetDelete",
+      "label": "指标删除"
+    }
+  ]
+}

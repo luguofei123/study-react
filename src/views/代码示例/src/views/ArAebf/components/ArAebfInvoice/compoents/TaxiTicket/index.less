@@ -1,0 +1,177 @@
+.taxi-ticket {
+    width: 336px;
+    // height: 545px;
+    margin: 0 auto;
+    position: relative;
+
+    .bg_top {
+        height: 10px;
+        // background: url("../../../img/taxiBg_top.png");
+    }
+
+    .bg_middle {
+        // background: url("../../../img/taxiBg_middle.png");
+        padding: 15px 0;
+        position: relative;
+
+        .check-result {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            overflow: visible !important;
+        }
+
+        .ticket-title {
+            color: #9A673A;
+            line-height: 22px;
+            font-size: 16px;
+            text-align: center;
+
+            span:nth-child(1) {
+                display: block;
+                margin-bottom: 9px;
+            }
+
+            .line {
+                width: 200px;
+                height: 1px;
+                background: #9A673A;
+                display: block;
+                margin: 1px auto;
+            }
+        }
+
+        .ticket-info {
+            margin-top: 10px;
+
+            &>div {
+                width: 78%;
+                margin: 0 auto;
+                overflow: hidden;
+                line-height: 32px;
+                padding-bottom: 10px;
+                display: flex;
+
+                label {
+                    width: 60px;
+                    display: inline-block;
+                    color: #9A673A;
+                }
+
+                .info-input {
+                    flex: 1;
+                }
+            }
+
+            &>div:first-child {
+                margin-top: 30px;
+            }
+
+            &>div:nth-child(3) {
+                border-bottom: 2px dashed #bbbbbb;
+                padding-bottom: 30px;
+                margin-bottom: 20px;
+            }
+
+            &>div:nth-child(7),
+            &>div:nth-child(8),
+            &>div:nth-child(9) {
+                label {
+                    width: 100px;
+                }
+
+                input {
+                    width: 158px
+                }
+            }
+
+            .wui-input {
+                border: none;
+                border-bottom: 1px solid #bbb;
+                background: transparent;
+                border-radius: 0;
+                font-size: 14px;
+                color: rgba(0, 0, 0, .65);
+                box-shadow: none;
+            }
+
+            .wui-input-number {
+                background: transparent;
+                border: none;
+
+                input {
+                    text-align: right;
+                    border-bottom: 1px solid #bbb;
+                    height: 30px;
+                    font-size: 14px;
+                    background: transparent;
+                    box-shadow: none;
+                    // line-height: 40px;
+                }
+            }
+
+            .wui-picker {
+                border: none;
+                background: transparent;
+                padding: 0;
+                text-align: left;
+                border-bottom: 1px solid #bbb;
+                border-radius: 0;
+                float: right;
+                height: 34px;
+                display: flex;
+                align-items: end;
+
+                input {
+                    // text-align: left;
+                    font-size: 14px;
+                    padding-left: 5px;
+                    // height: 40px;
+                    color: rgba(0, 0, 0, .65);
+                    border-bottom: none // line-height: 40px;
+                }
+
+                .wui-icon.uf.uf-calendar {
+                    // color: #000;
+                    color: rgba(0, 0, 0, .65);
+                }
+            }
+
+            .wui-time-picker {
+                border: none;
+                background: transparent;
+                // padding: 0;
+                align-items: start;
+                display: flex;
+                text-align: left;
+                border-bottom: 1px solid #bbb;
+                border-radius: 0;
+
+                input {
+                    font-size: 14px;
+                    background: transparent;
+                    text-align: left;
+                    height: 30px;
+                    color: rgba(0, 0, 0, .65);
+                }
+
+                .wui-time-picker-input-wrap {
+                    height: 34px;
+                    line-height: 40px;
+                }
+
+                .uf.uf-time-c-o {
+                    // color: #000;
+                    display: none;
+                    color: rgba(0, 0, 0, .65);
+                    top: 7px;
+                }
+            }
+        }
+    }
+
+    .bg_bottom {
+        // background: url("../../../img/taxiBg_bottom.png");
+        height: 22px;
+    }
+}

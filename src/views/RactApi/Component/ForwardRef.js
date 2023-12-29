@@ -56,7 +56,7 @@ class Child2 extends React.Component {
             return { number: state.number + 1 }
         })
     }
-    subNumber () {
+    subNumber = () => {
         this.setState((state, props) => ({ number: state.number - 1 }))
     }
     render () {
@@ -90,6 +90,10 @@ class ForwardRef extends React.Component {
         // console.log(myExample);
     }
     addNumber () {
+        console.log(this.childRef1);
+        console.log(this.childRef2);
+        console.log(this.childRef1.current);
+        console.log(this.childRef2.current);
         this.childRef1.current.click()
         this.childRef2.current.addNumber()
         this.setState((state, props) => {

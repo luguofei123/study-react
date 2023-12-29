@@ -92,7 +92,7 @@ class UseEffect extends React.Component {
                 {`
   useEffect：副作用，你可以理解为是类组件的生命周期，也是我们最常用的钩子，useEffect会在渲染的内容更新到DOM上后执行,不会阻塞DOM的更新
 
-  1 模拟 class 组件的 componentDidMount 第二个参数是 [] （不依赖于任何 state）
+  1 模拟 class 组件的 componentDidMount 第二个参数是 [] （不依赖于任何 state） 只执行一次
 
   useEffect(() => {
 
@@ -100,7 +100,7 @@ class UseEffect extends React.Component {
 
   }, [])
 
-  2 模拟 class 组件的 componentDidMount 和 componentDidUpdate
+  2 模拟 class 组件的 componentDidUpdate  只要有变化就会执行
 
   useEffect(() => {
 
@@ -108,7 +108,7 @@ class UseEffect extends React.Component {
 
   })
 
-  3 模拟 class 组件的 componentDidUpdate 第二个参数就是依赖的 state
+  3 模拟 class 组件的 componentDidUpdate 第二个参数就是依赖的 state 依赖有变化就会更新
 
   useEffect(() => {
 

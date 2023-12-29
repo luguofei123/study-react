@@ -1,0 +1,285 @@
+@main-color: #a98667;
+
+.general-ticket {
+    width: 860px;
+    height: 478px;
+    position: relative;
+    padding-bottom: 20px;
+
+    label {
+        color: @main-color;
+    }
+
+    th {
+        color: @main-color;
+        font-weight: normal;
+        text-align: center;
+    }
+
+    input {
+        background: none;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid #bbbbbb;
+        box-shadow: none !important;
+        font-size: 14px;
+        color: rgba(0, 0, 0, .65);
+    }
+
+    .bg {
+        margin: 0 auto;
+        background-color: #FFFDFA;
+        height: 100%;
+        box-shadow: 0px 2px 8px 1px rgba(204, 204, 204, 0.5);
+        margin-top: 10px;
+        position: relative;
+        width: 860px;
+
+        .check-result {
+            position: absolute;
+            right: 20px;
+            top: 5px;
+            overflow: visible !important;
+        }
+
+        .left,
+        .right {
+            float: left;
+            width: 40px;
+            height: 100%;
+
+            .circle {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 42px auto;
+                background: white;
+                border-radius: 50%;
+                box-shadow: inset 0px 0px 8px #ccc;
+            }
+
+            .circle:first-child {
+                margin-top: 30px;
+            }
+        }
+
+        .center {
+            float: left;
+            width: calc(100% - 80px);
+            height: 100%;
+            padding: 15px 10px 0 10px;
+
+            .ticket-title {
+                color: #9A673A;
+                line-height: 22px;
+                font-size: 16px;
+                text-align: center;
+
+                span:nth-child(1) {
+                    display: block;
+                    margin-bottom: 9px;
+                    letter-spacing: 5px;
+                }
+
+                .line {
+                    width: 200px;
+                    height: 1px;
+                    background: #9A673A;
+                    display: block;
+                    margin: 1px auto;
+                }
+            }
+
+            label {
+                display: inline-block;
+            }
+
+            &>div {
+                overflow: hidden;
+            }
+
+            .first-list {
+                line-height: 38px;
+
+                &>div:first-child {
+                    float: left;
+                }
+
+                &>div:last-child {
+                    float: right;
+                }
+
+                input {
+                    width: 180px;
+                }
+            }
+
+            .second-list {
+                line-height: 38px;
+
+                &>div {
+                    float: left;
+
+                    &:nth-child(2) {
+                        margin-left: 15%;
+                    }
+
+                    &:last-child {
+                        float: right;
+                    }
+                }
+
+                input {
+                    width: 180px;
+                }
+            }
+
+            .third-list {
+                overflow: hidden;
+                border: 1px solid @main-color;
+                border-bottom: none;
+                height: 80px;
+                margin-top: 10px;
+
+                &>div {
+                    width: 50%;
+                    float: left;
+                    overflow: hidden;
+                    height: 100%;
+
+                    &:first-child {
+                        border-right: 1px solid @main-color;
+                    }
+
+                    &>div {
+                        float: left;
+                        color: @main-color;
+                        height: 100%;
+
+                        &:first-child {
+                            border-right: 1px solid @main-color;
+                            width: 40px;
+                            padding-left: 13px;
+                            padding-top: 6px;
+                        }
+
+                        &:last-child {
+                            width: calc(100% - 40px);
+                        }
+
+                        &>div {
+                            overflow: hidden;
+                            line-height: 38px;
+
+                            label {
+                                display: inline-block;
+                                width: 90px;
+                                text-align-last: justify;
+                                margin-right: 10px;
+                                margin-left: 10px;
+                            }
+
+                            input {
+                                width: calc(100% - 120px);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .detail-table {
+                table {
+                    border-collapse: collapse;
+
+                    th,
+                    td {
+                        border: 1px solid @main-color !important;
+                        height: 35px;
+                    }
+
+                    .ant-input-number {
+                        border-bottom: none !important;
+                    }
+                }
+
+                input {
+                    border: none;
+                }
+            }
+
+            .fourth-list {
+                border: 1px solid @main-color;
+                border-top: none;
+
+                label {
+                    width: 150px;
+                    padding-left: 10px;
+                    text-align-last: justify;
+                    float: left;
+                }
+
+                input {
+                    width: 220px;
+                }
+
+                .ticket-input-box {
+                    float: left;
+                    width: 220px;
+
+                    .ant-input-number {
+                        border-bottom: none;
+                        height: 38px;
+                        line-height: 38px;
+                    }
+                }
+
+                &>div {
+                    line-height: 40px;
+                    overflow: hidden;
+
+                    &>div {
+                        float: left;
+
+                        &:nth-child(2) {
+                            label {
+                                text-align-last: right;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .wui-picker {
+                border: none;
+                width: 180px;
+                border-bottom: 1px solid #bbbbbb;
+                border-radius: 0;
+
+                input {
+                    border: none;
+
+                }
+            }
+
+            .input-box .ticket-input-box {
+                height: 40px;
+                display: flex;
+                align-items: center;
+            }
+
+            .wui-input-number {
+                border: none;
+                font-size: 14px;
+                border-bottom: 1px solid #bbbbbb;
+                background: transparent;
+
+
+                input {
+                    border: none;
+                    background: transparent;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

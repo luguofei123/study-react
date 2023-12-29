@@ -1,4 +1,5 @@
 import React, { useState, createRef, useImperativeHandle, forwardRef, useRef } from "react";
+import Highlight from 'react-highlight'
 // useImperativeHandle
 // 通过useImperativeHandle可以只暴露特定的操作
 // 通过useImperativeHandle的Hook, 将父组件传入的ref和useImperativeHandle第二个参数返回的对象绑定到了一起
@@ -31,6 +32,7 @@ const Child = forwardRef((props, ref) => {
     const sonref = useRef()
     const getSonMethod = () => {
         debugger
+        console.log(sonref)
         sonref.current.addNumber()
     }
     return (<div>
@@ -80,11 +82,31 @@ class UseImperativeHandle extends React.Component {
     }
     getChildrenMethod () {
         debugger
+        console.log(this.ChildRef)
         this.ChildRef.current.addNumber()
     }
     render () {
         let { number } = this.state
-        return (<div>
+        return (<div style={{ textAlign: 'left' }}>
+            <Highlight className='javascript'>
+                {`  1 通过useImperativeHandle可以只暴露特定的操作
+
+  2  当 ref 属性用于自定义 class 组件时，ref 接收组件的挂载实例作为其 current 属性;
+
+
+  useImperativeHandle使用简单总结:：
+
+   1 useImperativeHandle(ref, createHandle, [deps])
+
+   2 ref：useRef所创建的ref
+
+   3 createHandle：处理的函数，返回值作为暴露给父组件的 ref 对象。
+
+   4 deps：依赖项，依赖项更改形成新的 ref 对象。
+
+
+            
+            `}</Highlight>
             <Child ref={this.ChildRef} />
             <div>
                 <h3>class 类组件</h3>

@@ -1,0 +1,74 @@
+[
+  {
+    "code": "customDetele",
+    "label": "自定义删除"
+  },
+  {
+    "code": "customCopy",
+    "label": "自定义复制"
+  },
+  {
+    "code": "customEditor",
+    "label": "自定义编辑"
+  },
+  {
+    "code": "customView",
+    "label": "自定义查看"
+  },
+  {
+    "code": "customWorkFlowStart",
+    "label": "自定义提交"
+  },
+  {
+    "code": "customWorkFlowCancel",
+    "label": "自定义收回"
+  },
+  {
+    "code": "customWorkFlowApprove",
+    "label": "自定义审批"
+  },
+  {
+    "code": "customWorkFlowActivate",
+    "label": "自定义销审"
+  },
+  {
+    "code": "customWorkFlowBack",
+    "label": "自定义驳回"
+  },
+  {
+    "code": "customWorkFlowDiscard",
+    "label": "自定义作废"
+  },
+  {
+    "code": "customWorkOpenWorkFlow",
+    "label": "自定义流程"
+  },
+  {
+    "code": "customExport",
+    "label": "自定义导出"
+  },
+  {
+    "code": "DkPlanEnd",
+    "label": "自定义结束计划"
+  },
+  {
+    "code": "customConclude",
+    "label": "自定义办结"
+  },
+  {
+    "code": "customUnconclude",
+    "label": "自定义取消办结"
+  },
+  {
+    "code": "customStartCollected",
+    "label": "自定义开始收单"
+  },
+  {
+    "code": "customCollected",
+    "label": "自定义确认收单"
+  },
+  {
+    "code": "customUncollected",
+    "label": "自定义取消收单"
+  }
+]

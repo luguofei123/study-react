@@ -26,6 +26,7 @@ specifiers:
   case-sensitive-paths-webpack-plugin: ^2.4.0
   css-loader: ^6.5.1
   css-minimizer-webpack-plugin: ^3.2.0
+  default-passive-events: ^2.0.0
   dotenv: ^10.0.0
   dotenv-expand: ^5.1.0
   eslint: ^8.3.0
@@ -98,6 +99,7 @@ dependencies:
   case-sensitive-paths-webpack-plugin: 2.4.0
   css-loader: 6.7.3_webpack@5.76.3
   css-minimizer-webpack-plugin: 3.4.1_webpack@5.76.3
+  default-passive-events: 2.0.0
   dotenv: 10.0.0
   dotenv-expand: 5.1.0
   eslint: 8.36.0
@@ -5249,6 +5251,10 @@ packages:
     engines: {node: '>= 10'}
     dependencies:
       execa: 5.1.1
+    dev: false
+
+  /default-passive-events/2.0.0:
+    resolution: {integrity: sha512-eMtt76GpDVngZQ3ocgvRcNCklUMwID1PaNbCNxfpDXuiOXttSh0HzBbda1HU9SIUsDc02vb7g9+3I5tlqe/qMQ==}
     dev: false
 
   /define-lazy-prop/2.0.0:

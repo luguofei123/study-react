@@ -1,0 +1,177 @@
+@main-color: #9A673A;
+
+.value-added-tax-invoice {
+    width: 392px;
+
+    .bg_top {
+        width: 392px;
+        height: 16px;
+        // background-image: url("../../assets/img/vatiBg_top.png");
+        margin: 0 !important;
+    }
+
+    .bg_content {
+        width: 392px;
+        text-align: center;
+        margin: 0 !important;
+        padding-bottom: 20px;
+        //  background-image: url("../../assets/img/vatiBg_middle.png");
+        position: relative;
+
+        .check-result {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            overflow: visible !important;
+        }
+
+        .head-line {
+            height: 4px;
+            width: 260px;
+            border-bottom: 1px solid @main-color;
+            border-top: 1px solid @main-color;
+        }
+
+        h1 {
+            padding-top: 30px;
+            margin-bottom: 10px;
+            letter-spacing: 5px;
+            font-size: 16px;
+        }
+
+        h1,
+        label,
+        th {
+            color: @main-color;
+        }
+
+        table {
+            width: 320px;
+            margin: 0 auto;
+            margin-bottom: 30px;
+
+            .middleList {
+                th:not(:first-child):not(:last-child) {
+                    text-align: center !important;
+                }
+
+                th:last-child {
+                    text-align: right !important;
+                }
+
+                td:last-child {
+                    input {
+                        padding: 0 !important;
+                    }
+                }
+
+                td:not(:first-child):not(:last-child) {
+                    input {
+                        padding: 0 !important;
+                        text-align: center;
+                    }
+                }
+            }
+
+            th {
+                font-weight: normal;
+                text-align: left;
+            }
+
+            td {
+                padding: 0;
+
+                input {
+                    padding: 0;
+                    padding-right: 5px;
+                }
+            }
+
+            .ant-input-number-input {
+                border: none !important;
+            }
+        }
+
+        label {
+            width: 100px;
+            display: inline-block;
+            text-align: left;
+            line-height: 32px;
+        }
+
+        input {
+            background: none;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid #bbbbbb;
+            box-shadow: none;
+            font-size: 14px;
+        }
+
+        .ticket-input-box {}
+
+        &>div {
+            display: inline-block;
+            margin: 0 auto;
+            margin-bottom: 13px;
+
+            &>div {
+                float: right;
+            }
+
+            input,
+            &>div {
+                width: 220px;
+            }
+        }
+
+        .content_bottom {
+            .ant-input-number-input {
+                border: none !important;
+            }
+        }
+
+        .wui-picker {
+            border: none;
+            background: transparent;
+            padding: 0;
+            text-align: left;
+            border-bottom: 1px solid #bbb;
+            border-radius: 0;
+            float: right;
+            height: 34px;
+            display: flex;
+            align-items: end;
+
+            input {
+                font-size: 14px;
+                padding-left: 5px;
+                color: rgba(0, 0, 0, .65);
+                border-bottom: none;
+            }
+
+            .wui-icon.uf.uf-calendar {
+                color: rgba(0, 0, 0, .65);
+            }
+        }
+
+        .wui-input-number {
+            background: transparent;
+            border: none;
+
+            input {
+                text-align: right;
+                border-bottom: 1px solid #bbb;
+                height: 30px;
+                font-size: 14px;
+                // line-height: 40px;
+            }
+        }
+    }
+
+    .bg_bottom {
+        width: 392px;
+        height: 23px;
+        // background-image: url("../../assets/img/vatiBg_bottom.png");
+    }
+}

@@ -1,0 +1,246 @@
+.water-ticket-container {
+    width: 100%;
+    position: relative;
+
+    .bg {
+        margin: 0 auto;
+        width: 800px;
+        background-color: #F4FCFF;
+        height: 360px;
+        box-shadow: 0px 2px 8px 1px rgba(204, 204, 204, 0.5);
+        margin-top: 10px;
+
+        .check-result {
+            position: absolute;
+            right: 40px;
+            top: 15px;
+            overflow: visible !important;
+        }
+
+        .left,
+        .right {
+            float: left;
+            width: 40px;
+            height: 100%;
+
+            .circle {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 40px auto;
+                background: white;
+                border-radius: 50%;
+                box-shadow: inset 0px 0px 8px #ccc;
+            }
+
+            .circle:first-child {
+                margin-top: 30px;
+            }
+        }
+
+        .center {
+            float: left;
+            width: calc(100% - 80px);
+            height: 100%;
+            padding: 30px 10px 0 10px;
+
+            .ticket-title {
+                color: #19406A;
+                line-height: 22px;
+                font-size: 16px;
+                text-align: center;
+
+                span:nth-child(1) {
+                    display: block;
+                    margin-bottom: 9px;
+                }
+            }
+
+            .ticket-num {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-top: 20px;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    label {
+                        color: #19406A;
+                        width: 70px;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .ticket-location {
+                margin-top: 50px;
+                display: flex;
+                justify-content: space-between;
+
+                &>div {
+                    width: 180px;
+
+                    &:nth-child(2) {
+                        width: 160px;
+                        margin-top: -10px;
+                        display: flex;
+                        align-items: center;
+
+                        label {
+                            width: 50px;
+                        }
+
+                        .ticket-input-box {
+                            position: relative;
+
+                            &:before {
+                                content: '';
+                                position: absolute;
+                                bottom: -10px;
+                                right: 1px;
+                                width: 20px;
+                                height: 13px;
+                                border-top: 1px solid #bbbbbb;
+                                transform: rotate(15deg);
+                            }
+                        }
+
+                        &:hover {
+                            .ticket-input-box {
+                                &:before {
+                                    content: '';
+                                    position: absolute;
+                                    bottom: -10px;
+                                    right: 1px;
+                                    width: 20px;
+                                    height: 13px;
+                                    border-top: 1px solid #0066ff;
+                                    transform: rotate(15deg);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                input.wui-input {
+                    text-align: center;
+                    font-size: 16px;
+
+                }
+            }
+
+            .ticket-info {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin: 66px 0 20px 0;
+
+                &>div {
+                    display: flex;
+                    align-items: center;
+
+                    label {
+                        color: #19406A;
+                        display: inline-block;
+                        width: 40px;
+                    }
+
+                    &>div {
+                        flex: 1;
+                    }
+
+                    &:nth-child(1) {
+                        width: 310px;
+
+                        label {
+                            width: 70px !important;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        width: 140px;
+                    }
+
+                    &+div {
+                        margin-left: 20px
+                    }
+                }
+            }
+
+            .ticket-explain {
+                margin-top: 10px;
+                color: #333333;
+                width: 707px;
+
+                label {
+                    width: 57px;
+                    display: inline-block;
+                    text-align: justify;
+                    text-align-last: justify;
+                }
+
+                span {
+                    display: block;
+                    line-height: 2;
+                }
+            }
+
+
+            // 钉耙ui修改
+            input.wui-input {
+                background: transparent;
+                border: none;
+                font-size: 14px;
+                border-bottom: 1px solid #bbb;
+                border-radius: 0;
+                box-shadow: none;
+                text-align: left;
+                height: 30px;
+                color: rgba(0, 0, 0, .65);
+            }
+
+            .wui-input-number {
+                background: transparent;
+                border: none;
+
+                input {
+                    text-align: right;
+                    border-bottom: 1px solid #bbb;
+                    height: 30px;
+                    color: rgba(0, 0, 0, .65);
+                }
+            }
+
+            .wui-picker {
+                border: none;
+                background: transparent;
+                padding: 0;
+                text-align: left;
+                border-bottom: 1px solid #bbb;
+                border-radius: 0;
+                float: right;
+                display: flex;
+                align-items: end;
+
+                input {
+                    font-size: 14px;
+                    padding-left: 5px;
+                    border-bottom: none;
+                    color: rgba(0, 0, 0, .65);
+                }
+
+                .wui-icon.uf.uf-calendar {
+                    display: none;
+                    color: rgba(0, 0, 0, .65);
+                }
+
+                .wui-icon.uf.uf-close-c {
+                    display: none;
+                    color: rgba(0, 0, 0, .65);
+                }
+            }
+        }
+    }
+}

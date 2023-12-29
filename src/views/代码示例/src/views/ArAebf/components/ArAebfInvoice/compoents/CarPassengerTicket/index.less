@@ -1,0 +1,216 @@
+.car-ticket-container {
+    width: 100%;
+    position: relative;
+
+    .bg {
+        margin: 0 auto;
+        width: 800px;
+        background-color: #FFFDFA;
+        height: 300px;
+        box-shadow: 0px 2px 8px 1px rgba(204, 204, 204, 0.5);
+        margin-top: 10px;
+        position: relative;
+
+        .check-result {
+            position: absolute;
+            right: 40px;
+            top: 15px;
+            overflow: visible !important;
+        }
+
+        .left,
+        .right {
+            float: left;
+            width: 40px;
+            height: 100%;
+
+            .circle {
+                display: block;
+                width: 20px;
+                height: 20px;
+                margin: 36px auto;
+                background: white;
+                border-radius: 50%;
+                box-shadow: inset 0px 0px 8px #ccc;
+            }
+
+            .circle:first-child {
+                margin-top: 18px;
+            }
+        }
+
+        .center {
+            float: left;
+            width: calc(100% - 80px);
+            height: 100%;
+            padding-top: 30px;
+
+            .ticket-title {
+                color: #9A673A;
+                line-height: 22px;
+                font-size: 16px;
+                text-align: center;
+
+                span:nth-child(1) {
+                    display: block;
+                    margin-bottom: 9px;
+                }
+
+                .line {
+                    width: 200px;
+                    height: 1px;
+                    background: #9A673A;
+                    display: block;
+                    margin: 1px auto;
+                }
+            }
+
+            .ticket-num {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                div {
+                    display: flex;
+                    align-items: center;
+
+                    label {
+                        color: #9A673A;
+                        width: 70px;
+                        display: inline-block;
+                    }
+
+                    span {
+                        width: 160px;
+                        line-height: 32px;
+                        height: 32px;
+                        display: inline-block;
+                        border-bottom: 1px solid #BBBBBB;
+                        padding-left: 8px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        vertical-align: middle;
+                    }
+                }
+
+                input {
+                    border-radius: 0;
+                    border: none;
+                    background: none;
+                    border-bottom: 1px solid #BBBBBB;
+                    box-shadow: none !important;
+                    text-align: left;
+                    font-size: 14px;
+                    color: rgba(0, 0, 0, .65);
+                }
+            }
+
+            .ticket-table {
+                margin-top: 10px;
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    tr {
+                        th {
+                            color: #9A673A;
+                            font-weight: normal;
+                            text-align: center;
+                        }
+
+                        td {
+                            color: #333333;
+                        }
+
+                        th,
+                        td {
+                            height: 35px;
+                            line-height: 35px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            border: 1px solid #9A673A !important;
+                        }
+                    }
+
+                    &:nth-child(2) th {
+                        border-top: none !important;
+                    }
+
+                    input {
+                        border-radius: 0;
+                        border: none;
+                        background: none;
+
+                        box-shadow: none !important;
+                        text-align: center;
+                        font-size: 14px;
+                        color: rgba(0, 0, 0, .65);
+                    }
+
+                    .wui-input-number {
+                        background: transparent;
+                        border: none;
+
+                        input {
+                            text-align: right;
+                        }
+                    }
+
+                    .table-input-box.ticket-input-box {
+                        display: flex;
+                    }
+
+                    .wui-picker {
+                        border: none;
+                        background: transparent;
+                        padding: 0;
+                        text-align: center;
+
+                        input {
+                            text-align: center;
+                            font-size: 14px;
+                            padding-left: 25px;
+                        }
+
+                        .wui-icon.uf.uf-calendar {
+                            // color: #000;
+                            color: rgba(0, 0, 0, .65);
+                        }
+                    }
+
+                    .wui-time-picker {
+                        border: none;
+                        background: transparent;
+                        // padding: 0;
+                        align-items: center;
+                        display: flex;
+                        text-align: center;
+
+                        input {
+                            font-size: 14px;
+                            background: transparent;
+                            text-align: center;
+                        }
+
+                        .uf.uf-time-c-o {
+                            // color: #000;
+                            color: rgba(0, 0, 0, .65);
+                        }
+                    }
+                }
+            }
+
+            .ticket-explain {
+                margin-top: 10px;
+                color: #9A673A;
+                display: flex;
+                width: 707px;
+                justify-content: space-between;
+            }
+
+        }
+    }
+}
